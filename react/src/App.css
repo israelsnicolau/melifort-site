@@ -1,0 +1,208 @@
+.topo {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.topo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/topo-faixa.jpg");
+  background-size: 70%;
+  background-position: center;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.topo-faixa,
+.topo-principal {
+  position: relative;
+  z-index: 1;
+}
+
+.topo-faixa {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(to right, #f58220, #f5b041, #333333) 1;
+}
+
+.form-busca {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  min-width: 0;
+}
+
+.btn-buscar {
+  background-color: transparent;
+  border: none;
+  color: #333333;
+  cursor: pointer;
+}
+
+.btn-buscar:hover {
+  color: #f58220;
+}
+
+.busca-hexagono {
+  width: 250px;
+  height: 38px;
+  box-sizing: border-box;
+  padding: 2px;
+  background-color: transparent;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+}
+
+.busca-hexagono:focus-within {
+  background-color: #f58220;
+}
+
+.campo-busca {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+  border: none;
+  padding-left: 20px;
+  color: #f58220;
+}
+
+.campo-busca:focus {
+  outline: 2px solid #f58220;
+}
+
+.contatos {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.contatos a {
+  text-decoration: none;
+  color: #333333;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contatos a:hover {
+  color: #f58220;
+}
+
+.acoes-topo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.btn-contato {
+  display: inline-flex;
+  padding: 2px;
+  background-color: #f58220;
+  text-decoration: none;
+  clip-path: polygon(
+    8px 0,
+    calc(100% - 8px) 0,
+    100% 50%,
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0 50%
+  );
+}
+
+.btn-contato span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 12px;
+  background-color: white;
+  color: #f58220;
+  font-size: 14px;
+  clip-path: inherit;
+}
+
+.btn-catalogo {
+  display: inline-flex;
+  padding: 1px;
+  background-color: #f58220;
+  border: none;
+  cursor: pointer;
+  clip-path: polygon(
+    8px 0,
+    calc(100% - 8px) 0,
+    100% 50%,
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0 50%
+  );
+}
+
+.btn-catalogo span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 12px;
+  background-color: #f58220;
+  color: #ffffff;
+  font-size: 14px;
+  clip-path: inherit;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-catalogo:hover span {
+  background-color: #ffffff;
+  color: #f58220;
+}
+
+.btn-contato span {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-contato:hover span {
+  background-color: #f58220;
+  color: #ffffff;
+}
+.topo-principal img {
+  width: 180px;
+  height: auto;
+}
+
+.topo-principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.menu-principal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-principal a {
+  text-decoration: none;
+  color: #333333;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.menu-principal a:hover {
+  color: #f58220;
+}

@@ -1,0 +1,1291 @@
+{
+	"trilho": [
+		{
+			"tamanhos": [
+				"1,20 Metro"
+			],
+			"cores": [
+				"Aço"
+			],
+			"valores": [
+				"R$ 50,00"
+			]
+		},
+		{
+			"tamanhos": [
+				"1 Metro"
+			],
+			"cores": [
+				"Aço"
+			],
+			"valores": [
+				"R$ 45,00"
+			]
+		}
+	],
+	"pendural": [
+		{
+			"tamanhos": [
+				"10 cm"
+			],
+			"cores": [
+				"Aço"
+			],
+			"valores": [
+				"R$ 5,23"
+			]
+		}
+	],
+	"chapa-de-acrilico": [
+		{
+			"espessura": "2mm",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal",
+						"Preto",
+						"Branco",
+						"Bronze",
+						"Prata Espelhado",
+						"Dourado Espelhado",
+						"Rose"
+					],
+					"valores": "R$ 144,00"
+				},
+				{
+					"tamanhos": "Largura: 1240 x Comprimento: 2460",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 219,63"
+				}
+			]
+		},
+		{
+			"espessura": "3mm",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal",
+						"Preto",
+						"Branco",
+						"Bronze",
+						"Prata Espelhado",
+						"Dourado Espelhado",
+						"Rose"
+					],
+					"valores": "R$ 216,00"
+				},
+				{
+					"tamanhos": "Largura: 1240 x Comprimento: 2460",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 329,44"
+				}
+			]
+		},
+		{
+			"espessura": "4mm",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal",
+						"Preto",
+						"Branco",
+						"Bronze",
+						"Prata Espelhado",
+						"Dourado Espelhado",
+						"Rose"
+					],
+					"valores": "R$ 288,00"
+				},
+				{
+					"tamanhos": "Largura: 1240 x Comprimento: 2460",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 439,26"
+				}
+			]
+		},
+		{
+			"espessura": "5mm",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal",
+						"Preto",
+						"Branco",
+						"Bronze",
+						"Prata Espelhado",
+						"Dourado Espelhado",
+						"Rose"
+					],
+					"valores": "R$ 360,00"
+				},
+				{
+					"tamanhos": "Largura: 1240 x Comprimento: 2460",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 549,07"
+				}
+			]
+		},
+		{
+			"espessura": "6mm",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal",
+						"Preto",
+						"Branco",
+						"Bronze",
+						"Prata Espelhado",
+						"Dourado Espelhado",
+						"Rose"
+					],
+					"valores": "R$ 432,00"
+				},
+				{
+					"tamanhos": "Largura: 1240 x Comprimento: 2460",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 658,89"
+				}
+			]
+		},
+		{
+			"espessura": "10mm",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 720,00"
+				}
+			]
+		},
+		{
+			"espessura": "15mm",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 1.080,00"
+				}
+			]
+		},
+		{
+			"espessura": "20mm",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 1.440,00"
+				}
+			]
+		},
+		{
+			"espessura": "30mm",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 2.160,00"
+				}
+			]
+		}
+	],
+	"chapa-de-policarbonato-compacto": [
+		{
+			"espessura": "1,5",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 112,50"
+				}
+			]
+		},
+		{
+			"espessura": "2",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 x Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 223,26"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 150,00"
+				}
+			]
+		},
+		{
+			"espessura": "3",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 x Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 334,89"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 225,00"
+				}
+			]
+		},
+		{
+			"espessura": "4",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 x Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 446,52"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 300,00"
+				}
+			]
+		},
+		{
+			"espessura": "5",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 x Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 558,15"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 375,00"
+				}
+			]
+		},
+		{
+			"espessura": "6",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 450,00"
+				}
+			]
+		},
+		{
+			"espessura": "8",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 600,00"
+				}
+			]
+		},
+		{
+			"espessura": "1",
+			"opcoes": [
+				{
+					"tamanhos": "1220x2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 111,63"
+				}
+			]
+		},
+		{
+			"espessura": "10",
+			"opcoes": [
+				{
+					"tamanhos": "1220x2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 1.116,30"
+				},
+				{
+					"tamanhos": "te",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 1.116,30"
+				}
+			]
+		},
+		{
+			"espessura": "12",
+			"opcoes": [
+				{
+					"tamanhos": "1220x2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 1.339,56"
+				}
+			]
+		}
+	],
+	"chapa-de-policarbonato-alveolar": [
+		{
+			"espessura": "4",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 2100 x Comprimento: 6000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 337,50"
+				},
+				{
+					"tamanhos": "Largura: 1050 x Comprimento: 6000",
+					"cores": [
+						"Azul"
+					],
+					"valores": "R$ 168,75"
+				},
+				{
+					"tamanhos": "Largura: 1050 x Comprimento: 4000",
+					"cores": [
+						"Verde"
+					],
+					"valores": "R$ 112,50"
+				},
+				{
+					"tamanhos": "Largura: 1050 x Comprimento: 2000",
+					"cores": [
+						"Branco Leitoso"
+					],
+					"valores": "R$ 56,25"
+				},
+				{
+					"tamanhos": "Largura: 1050 x Comprimento: 3000",
+					"cores": [
+						"Bronze"
+					],
+					"valores": "R$ 84,38"
+				},
+				{
+					"tamanhos": "Largura: 2100 x Comprimento: 4000",
+					"cores": [
+						"Fumê"
+					],
+					"valores": "R$ 225,00"
+				},
+				{
+					"tamanhos": "Largura: 2100 x Comprimento: 3000",
+					"cores": [
+						"Prata Refletivo"
+					],
+					"valores": "R$ 168,75"
+				},
+				{
+					"tamanhos": "Largura: 2100 x Comprimento: 2000",
+					"cores": [
+						"Cristal",
+						"Bronze",
+						"Branco Leitoso"
+					],
+					"valores": "R$ 112,50"
+				}
+			]
+		},
+		{
+			"espessura": "6",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 2100 x Comprimento: 6000",
+					"cores": [
+						"Cristal",
+						"Bronze",
+						"Branco Leitoso"
+					],
+					"valores": "R$ 518,75"
+				},
+				{
+					"tamanhos": "Largura: 1050 x Comprimento: 6000",
+					"cores": [
+						"Cristal",
+						"Bronze",
+						"Branco Leitoso"
+					],
+					"valores": "R$ 259,38"
+				},
+				{
+					"tamanhos": "Largura: 1050 x Comprimento: 4000",
+					"cores": [
+						"Cristal",
+						"Bronze",
+						"Branco Leitoso"
+					],
+					"valores": "R$ 172,92"
+				},
+				{
+					"tamanhos": "Largura: 1050 x Comprimento: 2000",
+					"cores": [
+						"Cristal",
+						"Bronze",
+						"Branco Leitoso"
+					],
+					"valores": "R$ 86,46"
+				},
+				{
+					"tamanhos": "Largura: 1050 x Comprimento: 3000",
+					"cores": [
+						"Cristal",
+						"Bronze",
+						"Branco Leitoso"
+					],
+					"valores": "R$ 129,69"
+				},
+				{
+					"tamanhos": "Largura: 2100 x Comprimento: 4000",
+					"cores": [
+						"Cristal",
+						"Bronze",
+						"Branco Leitoso"
+					],
+					"valores": "R$ 345,83"
+				},
+				{
+					"tamanhos": "Largura: 2100 x Comprimento: 3000",
+					"cores": [
+						"Cristal",
+						"Bronze",
+						"Branco Leitoso"
+					],
+					"valores": "R$ 259,38"
+				},
+				{
+					"tamanhos": "Largura: 2100 x Comprimento: 2000",
+					"cores": [
+						"Cristal",
+						"Bronze",
+						"Branco Leitoso"
+					],
+					"valores": "R$ 172,92"
+				}
+			]
+		},
+		{
+			"espessura": "10",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 2100 x Comprimento: 6000",
+					"cores": [
+						"Cristal",
+						"Branco Leitoso",
+						"Bronze",
+						"Pérola Refletivo"
+					],
+					"valores": "Consultar"
+				}
+			]
+		}
+	],
+	"perfil-u": [
+		{
+			"tamanhos": [
+				"Largura: 4 x Comprimento: 6000"
+			],
+			"cores": [
+				"Cristal"
+			],
+			"valores": [
+				"R$ 37,50"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 6 x Comprimento: 6000"
+			],
+			"cores": [
+				"Cristal"
+			],
+			"valores": [
+				"R$ 37,50"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 4 x Comprimento: 3000"
+			],
+			"cores": [
+				"Cristal"
+			],
+			"valores": [
+				"R$ 23,23"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 6 x Comprimento: 3000"
+			],
+			"cores": [
+				"Cristal"
+			],
+			"valores": [
+				"R$ 23,23"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 4 x Comprimento: 1000"
+			],
+			"cores": [
+				"Cristal"
+			],
+			"valores": [
+				"R$ 13,23"
+			]
+		}
+	],
+	"perfil-h": [
+		{
+			"tamanhos": [
+				"Largura: 4 x Comprimento: 6000"
+			],
+			"cores": [
+				"Cristal",
+				"Fumê"
+			],
+			"valores": [
+				"R$ 77,69",
+				"R$ 120"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 6 x Comprimento: 6000"
+			],
+			"cores": [
+				"Cristal",
+				"Fumê"
+			],
+			"valores": [
+				"R$ 77,69",
+				"R$ 120"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 4 x Comprimento: 3000"
+			],
+			"cores": [
+				"Cristal",
+				"Fumê"
+			],
+			"valores": [
+				"R$ 38,85",
+				"R$ 120"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 6 x Comprimento: 3000"
+			],
+			"cores": [
+				"Cristal",
+				"Fumê"
+			],
+			"valores": [
+				"R$ 38,85",
+				"R$ 120"
+			]
+		}
+	],
+	"fita-dupla-face-vhb-acrilica": [
+		{
+			"tamanhos": [
+				"Largura: 5 x Comprimento: 20"
+			],
+			"cores": [
+				"Transparente"
+			],
+			"valores": [
+				"R$ 8,75"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 9 x Comprimento: 20"
+			],
+			"cores": [
+				"Transparente"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 12 x Comprimento: 20"
+			],
+			"cores": [
+				"Transparente"
+			],
+			"valores": [
+				"R$ 18,75"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 15 x Comprimento: 20"
+			],
+			"cores": [
+				"Transparente"
+			],
+			"valores": [
+				"R$ 22,50"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 19 x Comprimento: 20"
+			],
+			"cores": [
+				"Transparente"
+			],
+			"valores": [
+				"R$ 28,75"
+			]
+		}
+	],
+	"fita-dupla-face-branca": [
+		{
+			"tamanhos": [
+				"Largura: 5 x Comprimento: 20"
+			],
+			"cores": [
+				"Branca"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 12 x Comprimento: 20"
+			],
+			"cores": [
+				"Branca"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 15 x Comprimento: 20"
+			],
+			"cores": [
+				"Branca"
+			],
+			"valores": [
+				"R$ 56,25"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 19 x Comprimento: 20"
+			],
+			"cores": [
+				"Branca"
+			],
+			"valores": [
+				"R$ 71,25"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 25 x Comprimento: 20"
+			],
+			"cores": [
+				"Branca"
+			],
+			"valores": [
+				"Consultar"
+			]
+		}
+	],
+	"parafuso-sextavado": [
+		{
+			"tamanhos": [
+				"12x2 | 50 unidades"
+			],
+			"cores": [
+				"Metal"
+			],
+			"valores": [
+				"R$ 40,00"
+			]
+		},
+		{
+			"tamanhos": [
+				"12x2 | 100 unidades"
+			],
+			"cores": [
+				"Metal"
+			],
+			"valores": [
+				"R$ 80,00"
+			]
+		},
+		{
+			"tamanhos": [
+				"12x2 | 150 unidades"
+			],
+			"cores": [
+				"Metal"
+			],
+			"valores": [
+				"R$ 120,00"
+			]
+		},
+		{
+			"tamanhos": [
+				"12x2 | 200 unidades"
+			],
+			"cores": [
+				"Metal"
+			],
+			"valores": [
+				"R$ 160,00"
+			]
+		}
+	],
+	"fita-de-aluminio": [
+		{
+			"tamanhos": [
+				"Largura: 25 x Comprimento: 30"
+			],
+			"cores": [
+				"Aluminio"
+			],
+			"valores": [
+				"R$ 25,00"
+			]
+		}
+	],
+	"fita-de-neoprene": [
+		{
+			"tamanhos": [
+				"3x50x10 Metros"
+			],
+			"cores": [
+				"Preto"
+			],
+			"valores": [
+				"R$ 28,75"
+			]
+		}
+	],
+	"fita-dupla-face-para-carpete": [
+		{
+			"tamanhos": [
+				"Largura: 38 x Comprimento: 30 M"
+			],
+			"cores": [
+				"Amarelo"
+			],
+			"valores": [
+				"R$ 31,25"
+			]
+		},
+		{
+			"tamanhos": [
+				"Largura: 45 x Comprimento: 30 M"
+			],
+			"cores": [
+				"Amarelo"
+			],
+			"valores": [
+				"R$ 45,23"
+			]
+		}
+	],
+	"chapa-de-petg": [
+		{
+			"espessura": "0,5",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 65,30"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 43,88"
+				}
+			]
+		},
+		{
+			"espessura": "0,75",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 97,96"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 65,81"
+				}
+			]
+		},
+		{
+			"espessura": "0,9",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 117,55"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 78,98"
+				}
+			]
+		},
+		{
+			"espessura": "1",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 130,61"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 87,75"
+				}
+			]
+		},
+		{
+			"espessura": "1,5",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 195,91"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 131,63"
+				}
+			]
+		},
+		{
+			"espessura": "2",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 261,21"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 175,50"
+				}
+			]
+		},
+		{
+			"espessura": "3",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 391,82"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 263,25"
+				}
+			]
+		},
+		{
+			"espessura": "4",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 522,43"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 351,00"
+				}
+			]
+		},
+		{
+			"espessura": "5",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 653,04"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 438,75"
+				}
+			]
+		},
+		{
+			"espessura": "6",
+			"opcoes": [
+				{
+					"tamanhos": "Largura: 1220 X Comprimento: 2440",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 783,64"
+				},
+				{
+					"tamanhos": "Largura: 1000 x Comprimento: 2000",
+					"cores": [
+						"Cristal"
+					],
+					"valores": "R$ 526,50"
+				}
+			]
+		}
+	],
+	"chapa-de-ps": [
+		{
+			"espessura": "0,5",
+			"tamanhos": [
+				"Largura: 1000 X Comprimento: 2000"
+			],
+			"cores": [
+				"Cristal"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"espessura": "1",
+			"tamanhos": [
+				"Largura: 1000 X Comprimento: 2000"
+			],
+			"cores": [
+				"Branco Leitoso"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"espessura": "1,5",
+			"tamanhos": [
+				"Largura: 1000 X Comprimento: 2000"
+			],
+			"cores": [
+				"Verde"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"espessura": "2",
+			"tamanhos": [
+				"Largura: 1000 X Comprimento: 2000"
+			],
+			"cores": [
+				"Tricamada"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"espessura": "3",
+			"tamanhos": [
+				"Largura: 1000 X Comprimento: 2000"
+			],
+			"cores": [
+				"PS AI"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"espessura": "4",
+			"tamanhos": [
+				"Largura: 1000 X Comprimento: 2000"
+			],
+			"cores": [
+				"Cinza"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"espessura": "5",
+			"tamanhos": [
+				"Largura: 1000 X Comprimento: 2000"
+			],
+			"cores": [
+				"Preto"
+			],
+			"valores": [
+				"Consultar"
+			]
+		},
+		{
+			"espessura": "6",
+			"tamanhos": [
+				"Largura: 1000 X Comprimento: 2000"
+			],
+			"cores": [
+				"Vermelho"
+			],
+			"valores": [
+				"Consultar"
+			]
+		}
+	],
+	"chapa-de-pvc-expandido": [
+		{
+			"espessura": "2",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 50,00"
+			]
+		},
+		{
+			"espessura": "3",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 60,00"
+			]
+		},
+		{
+			"espessura": "4",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 71,50"
+			]
+		},
+		{
+			"espessura": "5",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 83,13"
+			]
+		},
+		{
+			"espessura": "6",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 99,75"
+			]
+		},
+		{
+			"espessura": "9",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 144,04"
+			]
+		},
+		{
+			"espessura": "10",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 158,75"
+			]
+		},
+		{
+			"espessura": "15",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 275,00"
+			]
+		},
+		{
+			"espessura": "20",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 575,23"
+			]
+		},
+		{
+			"espessura": "30",
+			"tamanhos": [
+				"Largura: 1220 x Comprimento: 2440"
+			],
+			"cores": [
+				"Branco"
+			],
+			"valores": [
+				"R$ 862,50"
+			]
+		}
+	],
+	"cortina-bobina-de-pvc-standard": [
+		{
+			"tamanhos": [
+				"2x200x10 Metros",
+				"2x200x20 Metros",
+				"2x200x30 Metros",
+				"2x200x40 Metros",
+				"2x200x50 Metros"
+			],
+			"cores": [
+				"Cristal"
+			],
+			"valores": [
+				"Consultar"
+			]
+		}
+	],
+	"cortina-bobina-de-pvc-standard-amarela": [
+		{
+			"tamanhos": [
+				"2x200x50 Metros"
+			],
+			"cores": [
+				"Amarela - Citronela"
+			],
+			"valores": [
+				"Consultar"
+			]
+		}
+	]
+}

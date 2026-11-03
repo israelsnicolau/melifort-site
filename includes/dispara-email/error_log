@@ -1,0 +1,9 @@
+[09-Aug-2024 16:41:44 UTC] PHP Warning:  file_get_contents(https://www.google.com/recaptcha/api/siteverify?secret=6Le6LB4qAAAAAA0wS1EY5Cb2FAS15AORRPINQRUk&amp;response=&amp;remoteip=179.94.87.15): Failed to open stream: Connection timed out in /home/gamesbom/public_html/institucional.melifort.com.br/includes/dispara-email/dispara-email-orcamento.php on line 31
+[09-Aug-2024 16:41:44 UTC] PHP Warning:  Attempt to read property "success" on null in /home/gamesbom/public_html/institucional.melifort.com.br/includes/dispara-email/dispara-email-orcamento.php on line 34
+[09-Aug-2024 17:01:57 UTC] PHP Warning:  Undefined array key "g-recaptcha-response" in /home/gamesbom/public_html/institucional.melifort.com.br/includes/dispara-email/dispara-email-orcamento.php on line 27
+[19-Aug-2024 21:15:02 America/Sao_Paulo] PHP Warning:  Undefined variable $tem_itens_no_carrinho in /home/gamesbom/public_html/institucional.melifort.com.br/includes/dispara-email/dispara-email-orcamento.php on line 174
+[19-Aug-2024 21:15:13 America/Sao_Paulo] PHP Warning:  Undefined variable $tem_itens_no_carrinho in /home/gamesbom/public_html/institucional.melifort.com.br/includes/dispara-email/dispara-email-orcamento.php on line 174
+[19-Aug-2024 21:29:52 America/Sao_Paulo] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * string in /home/gamesbom/public_html/institucional.melifort.com.br/includes/dispara-email/dispara-email-orcamento.php:166
+Stack trace:
+#0 {main}
+  thrown in /home/gamesbom/public_html/institucional.melifort.com.br/includes/dispara-email/dispara-email-orcamento.php on line 166
