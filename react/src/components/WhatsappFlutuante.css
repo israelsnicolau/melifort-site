@@ -1,0 +1,96 @@
+/* Botão flutuante WhatsApp */
+
+.whatsapp-flutuante {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 72px;
+  height: 72px;
+
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+/* Contorno hexagonal laranja */
+
+.whatsapp-hexagono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 68px;
+  height: 68px;
+
+  background: #ff9500;
+
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+
+  position: relative;
+}
+
+/* Hexágono verde interno */
+
+.whatsapp-hexagono::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+
+  background: linear-gradient(145deg, #28d978, #128c55);
+
+  clip-path: inherit;
+}
+
+/* Ícone oficial */
+
+.whatsapp-icone {
+  position: relative;
+  z-index: 1;
+
+  font-size: 34px;
+  color: #ffffff;
+}
+
+/* Interações */
+
+.whatsapp-flutuante:hover {
+  transform: translateY(-5px) scale(1.07);
+}
+
+.whatsapp-flutuante:focus-visible {
+  outline: 3px solid #142c42;
+  outline-offset: 5px;
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+  .whatsapp-flutuante {
+    right: 14px;
+    bottom: 18px;
+    width: 62px;
+    height: 62px;
+  }
+
+  .whatsapp-hexagono {
+    width: 60px;
+    height: 60px;
+  }
+
+  .whatsapp-icone {
+    font-size: 29px;
+  }
+}
+
+/* Acessibilidade */
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-flutuante {
+    transition: none;
+  }
+}

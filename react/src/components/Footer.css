@@ -1,0 +1,256 @@
+/* Estrutura principal */
+
+.footer {
+  background-color: #ff9500;
+  padding: 40px 24px 20px;
+  color: #ffffff;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Colunas */
+
+.footer-conteudo {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.5fr 1.3fr;
+  gap: 40px;
+  padding: 35px 0 50px;
+  align-items: start;
+}
+
+.footer-coluna {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  min-width: 0;
+}
+
+.footer-coluna h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.footer-coluna a,
+.footer-coluna span {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-coluna a {
+  transition: color 0.3s ease;
+}
+
+.footer-coluna a:hover {
+  color: #303030;
+}
+
+/* Logo */
+
+.footer-marca {
+  justify-content: center;
+  min-height: 180px;
+}
+
+.footer-logo {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Informações com ícones */
+
+.footer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.footer-info svg {
+  width: 17px;
+  height: 17px;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.footer-info span {
+  overflow-wrap: anywhere;
+}
+
+a.footer-info:hover svg {
+  transform: scale(1.15);
+}
+
+/* Dados da empresa */
+
+.footer-empresa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+
+  padding: 22px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+
+  text-align: center;
+}
+
+.footer-empresa p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.footer-empresa strong {
+  font-weight: 600;
+}
+
+/* Créditos Corex */
+
+.footer-inferior {
+  padding-top: 22px;
+  text-align: center;
+}
+
+.footer-creditos {
+  margin: 0;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.footer-creditos a {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-creditos a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+/* Tablets */
+
+@media (max-width: 1024px) {
+  .footer-conteudo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .footer-marca {
+    min-height: auto;
+  }
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 35px 20px 20px;
+  }
+
+  .footer-conteudo {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 20px 0 35px;
+  }
+
+  .footer-marca {
+    align-items: center;
+  }
+
+  .footer-logo {
+    max-width: 200px;
+  }
+
+  .footer-coluna h3 {
+    font-size: 19px;
+  }
+
+  .footer-empresa {
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px 0;
+  }
+
+  .footer-empresa p,
+  .footer-creditos {
+    font-size: 12px;
+  }
+}
+
+/* Consulta de segurança */
+
+.footer-seguranca {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 0 24px;
+}
+
+.footer-seguranca-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.footer-seguranca-link:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #ffffff;
+}
+
+.footer-seguranca-link svg {
+  flex-shrink: 0;
+}
+
+.footer-seguranca-link span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.footer-seguranca-link strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footer-seguranca-link small {
+  font-size: 11px;
+  opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+  .footer-seguranca {
+    justify-content: center;
+  }
+}
