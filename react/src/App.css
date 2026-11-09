@@ -7,7 +7,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/topo-faixa.jpg");
+  background-image: url("/header/background-header.jpg");
   background-size: 70%;
   background-position: center;
   opacity: 0.4;
@@ -51,12 +51,20 @@
 }
 
 .busca-hexagono {
+  position: relative;
   width: 250px;
   height: 38px;
-  box-sizing: border-box;
-  padding: 2px;
-  background-color: transparent;
-  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+  flex-shrink: 0;
+  background-color: #f58220;
+
+  clip-path: polygon(
+    12px 0,
+    calc(100% - 12px) 0,
+    100% 50%,
+    calc(100% - 12px) 100%,
+    12px 100%,
+    0 50%
+  );
 }
 
 .busca-hexagono:focus-within {
@@ -64,17 +72,29 @@
 }
 
 .campo-busca {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  box-sizing: border-box;
+
   background-color: #f7f7f7;
-  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
   border: none;
-  padding-left: 20px;
-  color: #f58220;
+  color: #333333;
+  padding: 0 18px;
+
+  clip-path: polygon(
+    11px 0,
+    calc(100% - 11px) 0,
+    100% 50%,
+    calc(100% - 11px) 100%,
+    11px 100%,
+    0 50%
+  );
 }
 
 .campo-busca:focus {
-  outline: 2px solid #f58220;
+  outline: none;
 }
 
 .contatos {
@@ -205,4 +225,272 @@
 
 .menu-principal a:hover {
   color: #f58220;
+}
+
+/* ==========================
+   BANNER PRINCIPAL
+========================== */
+
+.banner-home {
+  width: 100%;
+  min-height: 450px;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.banner-conteudo {
+  max-width: 550px;
+}
+
+.banner-conteudo h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.banner-conteudo p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.banner-home .swiper {
+  width: 100%;
+}
+
+.banner-home .swiper-slide {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 450px;
+}
+
+.banner-imagem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-home .container {
+  position: relative;
+  z-index: 1;
+}
+
+.container-escrita {
+  padding-left: 50px;
+}
+
+/* ==========================
+   BOTAO BANNER */
+
+.btn-contato-banner {
+  display: inline-flex;
+  padding: 2px;
+  background-color: #f58220;
+  text-decoration: none;
+  clip-path: polygon(
+    8px 0,
+    calc(100% - 8px) 0,
+    100% 50%,
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0 50%
+  );
+}
+
+.btn-contato-banner span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 12px;
+  background-color: #f58220;
+  color: white;
+  font-size: 20px;
+  clip-path: inherit;
+  font-weight: bold;
+}
+
+.btn-contato-banner span {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-contato-banner:hover span {
+  background-color: white;
+  color: #f58220;
+}
+
+/* ==========================
+   SETAS DO CARROSSEL
+========================== */
+
+.banner-home .swiper-button-prev {
+  left: calc(50% - 65px) !important;
+  right: auto !important;
+}
+
+.banner-home .swiper-button-next {
+  left: calc(50% + 10px) !important;
+  right: auto !important;
+}
+
+.banner-home .swiper-button-next,
+.banner-home .swiper-button-prev {
+  top: auto !important;
+  bottom: 8px !important;
+  margin-top: 0;
+  transform: none !important;
+
+  background-color: white;
+  color: #f58220;
+
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.banner-home .swiper-button-next:hover,
+.banner-home .swiper-button-prev:hover {
+  background-color: #f58220;
+  color: #ffffff;
+}
+
+/*=======
+DESTAQUES
+=====*/
+
+.destaques {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.destaques-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.destaques-texto {
+  flex: 0 0 calc(40% - 16px);
+  color: #333333;
+}
+
+.destaques-texto h2 {
+  font-size: 27px;
+  font-weight: 800;
+  color: #174c75;
+  letter-spacing: -1px;
+}
+
+.destaques-texto p {
+  font-size: 18px;
+}
+
+.destaques-produtos {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 20px;
+}
+
+/*=======
+CARD PRODUTOS DESTAQUE
+=====*/
+.produto-card {
+  flex: 1;
+  min-width: 0;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+
+  /* Efeito tecnológico */
+  border: 1px solid transparent;
+
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.produto-card:hover {
+  transform: none !important;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.produto-card h3 {
+  font-size: 18px;
+  color: #333333;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  position: static;
+  flex: 0 0 auto;
+  transition: color 0.35s ease;
+}
+
+.destaques .produto-card:hover h3 {
+  color: #f58220 !important;
+}
+
+.produto-imagem img {
+  transition: filter 0.4s ease;
+}
+
+.produto-card:hover .produto-imagem img {
+  filter: drop-shadow(0 0 4px rgba(245, 130, 32, 0.5))
+    drop-shadow(0 0 12px rgba(245, 130, 32, 0.25));
+}
+
+.produto-imagem {
+  width: 100%;
+  margin: 0;
+}
+
+.produto-imagem img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.btn-destaques {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 25px;
+  padding: 12px 30px;
+
+  background-color: #f58220;
+  color: #ffffff;
+
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+
+  clip-path: polygon(
+    12px 0,
+    calc(100% - 12px) 0,
+    100% 50%,
+    calc(100% - 12px) 100%,
+    12px 100%,
+    0 50%
+  );
+
+  transition: background-color 0.3s ease;
+}
+
+.btn-destaques:hover {
+  background-color: #174c75;
 }
