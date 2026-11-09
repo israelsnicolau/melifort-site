@@ -22,7 +22,7 @@ function Banner() {
       >
         <SwiperSlide>
           <img
-            src="/carroussel/policarbonato.jpg"
+            src={`${import.meta.env.BASE_URL}carroussel/policarbonato.jpg`}
             alt="Policarbonato Melifort"
             className="banner-imagem"
           />
@@ -47,7 +47,7 @@ function Banner() {
 
         <SwiperSlide>
           <img
-            src="/carroussel/bobina_pvc.jpg"
+            src={`${import.meta.env.BASE_URL}carroussel/bobina_pvc.jpg`}
             alt="Bobina de PVC Melifort"
             className="banner-imagem"
           />
@@ -72,7 +72,7 @@ function Banner() {
 
         <SwiperSlide>
           <img
-            src="/carroussel/acrilico.jpg"
+            src={`${import.meta.env.BASE_URL}carroussel/acrilico.jpg`}
             alt="Acrílico Melifort"
             className="banner-imagem"
           />

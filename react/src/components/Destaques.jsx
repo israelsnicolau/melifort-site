@@ -2,19 +2,19 @@ const produtos = [
   {
     id: 1,
     nome: "Cortina Bobina de PVC Standard",
-    imagem: "/produtos/bobina_pvc.png",
+    imagem: `${import.meta.env.BASE_URL}produtos/bobina_pvc.png`,
   },
 
   {
     id: 2,
     nome: "Chapa de Policarbonato Alveolar",
-    imagem: "/produtos/policarbonato.png",
+    imagem: `${import.meta.env.BASE_URL}produtos/policarbonato.png`,
   },
 
   {
     id: 3,
     nome: "Chapa de Acrílico",
-    imagem: "/produtos/acrilico.png",
+    imagem: `${import.meta.env.BASE_URL}produtos/acrilico.png`,
   },
 ];
 

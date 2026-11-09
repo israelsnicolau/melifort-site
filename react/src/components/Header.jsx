@@ -63,7 +63,7 @@ function Header() {
       {/*MENU*/}
       <div className="topo-principal">
         <a href="/">
-          <img src="/logo.png" alt="Melifort" />
+          <img src={`${import.meta.env.BASE_URL}/logo.png"`} alt="Melifort" />
         </a>
         <nav className="menu-principal">
           <a href="/">Home</a>
