@@ -1,0 +1,137 @@
+/*=======
+DESTAQUES
+=====*/
+
+.destaques {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.destaques-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.destaques-texto {
+  flex: 0 0 calc(40% - 16px);
+  color: #333333;
+}
+
+.destaques-texto h2 {
+  font-size: 27px;
+  font-weight: 800;
+  color: #174c75;
+  letter-spacing: -1px;
+}
+
+.destaques-texto p {
+  font-size: 18px;
+}
+
+.destaques-produtos {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  gap: 20px;
+}
+
+/*=======
+CARD PRODUTOS DESTAQUE
+=====*/
+.produto-card {
+  flex: 1;
+  min-width: 0;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+
+  /* Efeito tecnológico */
+  border: 1px solid transparent;
+
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.produto-card:hover {
+  transform: none !important;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.produto-card h3 {
+  font-size: 18px;
+  color: #333333;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  position: static;
+  flex: 0 0 auto;
+  transition: color 0.35s ease;
+}
+
+.destaques .produto-card:hover h3 {
+  color: #f58220 !important;
+}
+
+.produto-imagem img {
+  transition: filter 0.4s ease;
+}
+
+.produto-card:hover .produto-imagem img {
+  filter: drop-shadow(0 0 4px rgba(245, 130, 32, 0.5))
+    drop-shadow(0 0 12px rgba(245, 130, 32, 0.25));
+}
+
+.produto-imagem {
+  width: 100%;
+  margin: 0;
+}
+
+.produto-imagem img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.btn-destaques {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 25px;
+  padding: 12px 30px;
+
+  background-color: #f58220;
+  color: #ffffff;
+
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+
+  clip-path: polygon(
+    12px 0,
+    calc(100% - 12px) 0,
+    100% 50%,
+    calc(100% - 12px) 100%,
+    12px 100%,
+    0 50%
+  );
+
+  transition: background-color 0.3s ease;
+}
+
+.btn-destaques:hover {
+  background-color: #174c75;
+}

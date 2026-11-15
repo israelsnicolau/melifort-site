@@ -1,3 +1,5 @@
+import "./Destaques.css";
+
 const produtos = [
   {
     id: 1,

@@ -3,6 +3,7 @@ import "swiper/css";
 import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+import "./Banner.css";
 
 function Banner() {
   return (

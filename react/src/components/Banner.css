@@ -1,0 +1,129 @@
+/* ==========================
+   BANNER PRINCIPAL
+========================== */
+
+.banner-home {
+  width: 100%;
+  min-height: 450px;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+.banner-conteudo {
+  max-width: 550px;
+}
+
+.banner-conteudo h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.banner-conteudo p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.banner-home .swiper {
+  width: 100%;
+}
+
+.banner-home .swiper-slide {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 450px;
+}
+
+.banner-imagem {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-home .container {
+  position: relative;
+  z-index: 1;
+}
+
+.container-escrita {
+  padding-left: 50px;
+}
+
+/* ==========================
+   BOTAO BANNER */
+
+.btn-contato-banner {
+  display: inline-flex;
+  padding: 2px;
+  background-color: #f58220;
+  text-decoration: none;
+  clip-path: polygon(
+    8px 0,
+    calc(100% - 8px) 0,
+    100% 50%,
+    calc(100% - 8px) 100%,
+    8px 100%,
+    0 50%
+  );
+}
+
+.btn-contato-banner span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 12px;
+  background-color: #f58220;
+  color: white;
+  font-size: 20px;
+  clip-path: inherit;
+  font-weight: bold;
+}
+
+.btn-contato-banner span {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-contato-banner:hover span {
+  background-color: white;
+  color: #f58220;
+}
+
+/* ==========================
+   SETAS DO CARROSSEL
+========================== */
+
+.banner-home .swiper-button-prev {
+  left: calc(50% - 65px) !important;
+  right: auto !important;
+}
+
+.banner-home .swiper-button-next {
+  left: calc(50% + 10px) !important;
+  right: auto !important;
+}
+
+.banner-home .swiper-button-next,
+.banner-home .swiper-button-prev {
+  top: auto !important;
+  bottom: 8px !important;
+  margin-top: 0;
+  transform: none !important;
+
+  background-color: white;
+  color: #f58220;
+
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.banner-home .swiper-button-next:hover,
+.banner-home .swiper-button-prev:hover {
+  background-color: #f58220;
+  color: #ffffff;
+}
