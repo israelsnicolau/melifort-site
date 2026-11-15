@@ -1,10 +1,15 @@
-import { Phone, Search, Mail } from "lucide-react";
+import { Phone, Search, Mail, Menu, X } from "lucide-react";
+import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import "./Header.css";
 
 //CABECALHO
 function Header() {
+  const [menuAberto, setMenuAberto] = useState(false);
   return (
-    <header className="topo">
+    <header
+      className={`topo header-layout ${menuAberto ? "header-menu-aberto" : ""}`}
+    >
       {/*BARRA SUPERIOR*/}
       <div className="topo-faixa">
         {/*CONTATOS*/}
@@ -13,7 +18,7 @@ function Header() {
             {" "}
             <Phone size={18} /> (11) 2084-7726
           </a>
-          <a>|</a>
+          <span className="separador-contato">|</span>
           <a
             href="https://wa.me/5511937387748"
             target="_blank"
@@ -21,7 +26,7 @@ function Header() {
           >
             <FaWhatsapp size={18} /> (11) 93738-7748
           </a>
-          <a>|</a>
+          <span className="separador-contato">|</span>
           {/*EMAIL*/}
           <a href="mailto:contato@melifort.com.br">
             <Mail size={18} />
@@ -65,7 +70,22 @@ function Header() {
         <a href="/">
           <img src={`${import.meta.env.BASE_URL}/logo.png`} alt="Melifort" />
         </a>
-        <nav className="menu-principal">
+
+        {/*BOTAO DA NAVBAR NO MOBILE*/}
+        <button
+          type="button"
+          className="menu-mobile-botao"
+          aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuAberto}
+          aria-controls="menu-navegacao"
+          onClick={() => setMenuAberto(!menuAberto)}
+        >
+          {menuAberto ? <X size={28} /> : <Menu size={28} />}
+        </button>
+        <nav
+          id="menu-navegacao"
+          className={`menu-principal ${menuAberto ? "menu-aberto" : ""}`}
+        >
           <a href="/">Home</a>
           <a href="/empresa">Empresa</a>
           <a href="/produtos">Produtos</a>
