@@ -1,24 +1,26 @@
 import { Phone, Search, Mail, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 import "./Header.css";
 
-//CABECALHO
 function Header() {
   const [menuAberto, setMenuAberto] = useState(false);
+
+  const fecharMenu = () => setMenuAberto(false);
+
   return (
     <header
       className={`topo header-layout ${menuAberto ? "header-menu-aberto" : ""}`}
     >
-      {/*BARRA SUPERIOR*/}
       <div className="topo-faixa">
-        {/*CONTATOS*/}
         <div className="contatos">
           <a href="tel:551120847726">
-            {" "}
             <Phone size={18} /> (11) 2084-7726
           </a>
+
           <span className="separador-contato">|</span>
+
           <a
             href="https://wa.me/5511937387748"
             target="_blank"
@@ -26,23 +28,27 @@ function Header() {
           >
             <FaWhatsapp size={18} /> (11) 93738-7748
           </a>
+
           <span className="separador-contato">|</span>
-          {/*EMAIL*/}
+
           <a href="mailto:contato@melifort.com.br">
             <Mail size={18} />
             contato@melifort.com.br
           </a>
         </div>
 
-        {/*PESQUISA*/}
-        <form className="form-busca">
+        <form
+          className="form-busca"
+          onSubmit={(event) => event.preventDefault()}
+        >
           <div className="busca-hexagono">
             <input
               className="campo-busca"
               type="search"
               placeholder="Pesquisar produtos..."
-            />{" "}
+            />
           </div>
+
           <button
             aria-label="Buscar produtos"
             className="btn-buscar"
@@ -53,30 +59,26 @@ function Header() {
         </form>
 
         <div className="acoes-topo">
-          {/*CONTATO*/}
-          <a href="/contato" className="btn-contato">
+          <Link to="/contato" className="btn-contato" onClick={fecharMenu}>
             <span>Contato</span>
-          </a>
+          </Link>
 
-          {/*CATALOGO*/}
           <button type="button" className="btn-catalogo">
             <span>Catálogo</span>
           </button>
         </div>
       </div>
 
-      {/*MENU*/}
       <div className="topo-principal">
-        <a href="/" className="logo-header">
+        <Link to="/" className="logo-header" onClick={fecharMenu}>
           <img
             src={`${import.meta.env.BASE_URL}logo.webp`}
             alt="Melifort"
             width="150"
             height="67"
           />
-        </a>
+        </Link>
 
-        {/*BOTAO DA NAVBAR NO MOBILE*/}
         <button
           type="button"
           className="menu-mobile-botao"
@@ -87,18 +89,42 @@ function Header() {
         >
           {menuAberto ? <X size={28} /> : <Menu size={28} />}
         </button>
+
         <nav
           id="menu-navegacao"
           className={`menu-principal ${menuAberto ? "menu-aberto" : ""}`}
         >
-          <a href="/">Home</a>
-          <a href="/empresa">Empresa</a>
-          <a href="/produtos">Produtos</a>
-          <a href="/servicos">Serviços</a>
-          <a href="/cotacao">Cotação Online</a>
-          <a href="/programa-de-fidelidade">Programa de Fidelidade</a>
-          <a href="/#segmentos">Segmentos</a>
-          <a href="/contato">Contato</a>
+          <Link to="/" onClick={fecharMenu}>
+            Home
+          </Link>
+
+          <Link to="/empresa" onClick={fecharMenu}>
+            Empresa
+          </Link>
+
+          <Link to="/produtos" onClick={fecharMenu}>
+            Produtos
+          </Link>
+
+          <Link to="/servicos" onClick={fecharMenu}>
+            Serviços
+          </Link>
+
+          <Link to="/cotacao" onClick={fecharMenu}>
+            Cotação Online
+          </Link>
+
+          <Link to="/programa-de-fidelidade" onClick={fecharMenu}>
+            Programa de Fidelidade
+          </Link>
+
+          <Link to="/#segmentos" onClick={fecharMenu}>
+            Segmentos
+          </Link>
+
+          <Link to="/contato" onClick={fecharMenu}>
+            Contato
+          </Link>
         </nav>
       </div>
     </header>

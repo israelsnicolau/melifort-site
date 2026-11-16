@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
@@ -10,7 +10,7 @@ import Empresa from "./pages/Empresa.jsx";
 
 function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Header />
 
       <Routes>
@@ -20,7 +20,7 @@ function App() {
 
       <Footer />
       <WhatsappFlutuante />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
