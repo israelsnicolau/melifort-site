@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from "react";
 import "./Segmentos.css";
+import ImagemOtimizada from "./ImagemOtimizada";
 
 const segmentos = [
   {
@@ -34,8 +36,42 @@ const segmentos = [
 ];
 
 function Segmentos() {
+  const secaoRef = useRef(null);
+  const [visivel, setVisivel] = useState(false);
+
+  useEffect(() => {
+    const secao = secaoRef.current;
+
+    if (!secao) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setVisivel(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entrada]) => {
+        if (entrada.isIntersecting) {
+          setVisivel(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -30px 0px",
+      },
+    );
+
+    observer.observe(secao);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="segmentos">
+    <section
+      ref={secaoRef}
+      className={`segmentos ${visivel ? "segmentos-visivel" : ""}`}
+    >
       <div className="segmentos-container">
         <h2>Segmentos</h2>
 
@@ -45,14 +81,13 @@ function Segmentos() {
               className="segmento"
               key={segmento.nome}
               href={`${import.meta.env.BASE_URL}${segmento.link}`}
-              style={{
-                backgroundImage: `linear-gradient(
-                  to top,
-                  rgba(0, 0, 0, 0.85),
-                  rgba(0, 0, 0, 0.05)
-                ), url("${import.meta.env.BASE_URL}segmentos/${segmento.imagem}")`,
-              }}
             >
+              <ImagemOtimizada
+                className="segmento-imagem"
+                src={`${import.meta.env.BASE_URL}segmentos-webp/${segmento.imagem.replace(/\.(png|jpe?g)$/i, ".webp")}`}
+                alt={`Aplicações de plásticos no segmento de ${segmento.nome}`}
+              />
+
               <div className="segmento-conteudo">
                 <div className="segmento-textos">
                   <h3>{segmento.nome}</h3>

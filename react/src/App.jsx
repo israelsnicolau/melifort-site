@@ -1,40 +1,26 @@
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header.jsx";
-import Banner from "./components/Banner.jsx";
-import Destaques from "./components/Destaques.jsx";
-import Segmentos from "./components/Segmentos.jsx";
-import Sobre from "./components/Sobre.jsx";
-import Avaliacoes from "./components/Avaliacoes.jsx";
 import Footer from "./components/Footer.jsx";
 import WhatsappFlutuante from "./components/WhatsappFlutuante.jsx";
 
+import Home from "./pages/Home.jsx";
+import Empresa from "./pages/Empresa.jsx";
+
 function App() {
   return (
-    <>
-      {/*CHAMA CABECALHO*/}
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Header />
 
-      {/*CHAMA BANNER PRINCIPAL*/}
-      <Banner />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/empresa" element={<Empresa />} />
+      </Routes>
 
-      {/*CHAMA DESTAQUES*/}
-      <Destaques />
-
-      {/*CHAMA SEGMENTOS*/}
-      <Segmentos />
-
-      {/*CHAMA SOBRE*/}
-      <Sobre />
-
-      {/*CHAMA AVALIACOES*/}
-      <Avaliacoes />
-
-      {/*CHAMA RODAPE*/}
       <Footer />
-
-      {/*WHATSAPP FLUTUANTE*/}
       <WhatsappFlutuante />
-    </>
+    </BrowserRouter>
   );
 }
 

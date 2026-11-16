@@ -1,28 +1,77 @@
 import { Phone, Mail, Clock3, ShieldCheck } from "lucide-react";
-import { FaWhatsapp } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaInstagram,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTelegramPlane,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
+import ImagemOtimizada from "./ImagemOtimizada";
 import "./Footer.css";
+
+const redesSociais = [
+  {
+    nome: "Instagram",
+    url: "https://www.instagram.com/melifortplasticos/?__pwa=1",
+    Icone: FaInstagram,
+  },
+  {
+    nome: "Facebook",
+    url: "https://www.facebook.com/p/Melifort-Com%C3%A9rcio-e-Distribui%C3%A7%C3%A3o-de-Pl%C3%A1sticos-61556387811162/",
+    Icone: FaFacebookF,
+  },
+  {
+    nome: "LinkedIn",
+    url: "https://www.linkedin.com/company/melifort",
+    Icone: FaLinkedinIn,
+  },
+  {
+    nome: "Telegram",
+    url: "https://t.me/Melifort_brasil",
+    Icone: FaTelegramPlane,
+  },
+];
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-conteudo">
-          {/* Logo */}
           <div className="footer-coluna footer-marca">
-            <img
+            <ImagemOtimizada
               src={`${import.meta.env.BASE_URL}logo_footer.png`}
               alt="Melifort Plásticos"
               className="footer-logo"
             />
+
+            <div className="footer-redes">
+              <span className="footer-redes-titulo">Siga a Melifort</span>
+
+              <div className="footer-redes-icones">
+                {redesSociais.map(({ nome, url, Icone }) => (
+                  <a
+                    key={nome}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Melifort no ${nome}`}
+                    title={nome}
+                  >
+                    <Icone aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
           <nav className="footer-coluna" aria-label="Navegação do rodapé">
             <h3>Institucional</h3>
 
-            <a href={`${import.meta.env.BASE_URL}`}>Home</a>
-            <a href="#produtos">Produtos</a>
-            <a href="#segmentos">Informações</a>
-            <a href="#sobre">Sobre a Melifort</a>
+            <Link to="/">Home</Link>
+            <Link to="/#produtos">Produtos</Link>
+            <Link to="/#segmentos">Informações</Link>
+            <Link to="/empresa">Sobre a Melifort</Link>
             <a href="mailto:contato@melifort.com.br">Contato</a>
           </nav>
 

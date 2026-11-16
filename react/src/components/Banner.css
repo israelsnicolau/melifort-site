@@ -25,6 +25,7 @@
 
 .banner-home .swiper {
   width: 100%;
+  min-height: 450px;
 }
 
 .banner-home .swiper-slide {
@@ -126,4 +127,117 @@
 .banner-home .swiper-button-prev:hover {
   background-color: #f58220;
   color: #ffffff;
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 768px) {
+  .banner-home .swiper {
+    min-height: 100px;
+  }
+
+  .banner-home {
+    min-height: 100px;
+  }
+
+  .banner-home .swiper-slide {
+    min-height: 100px;
+  }
+
+  .banner-home .swiper-button-next,
+  .banner-home .swiper-button-prev {
+    display: none !important;
+  }
+
+  .banner-home .container-escrita {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .banner-home .banner-home__wrapper {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .banner-home .banner-home__content {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .banner-home .banner-home__content h2 {
+    font-size: clamp(22px, 6vw, 32px);
+    line-height: 1.15;
+    margin-bottom: 15px;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .banner-home .banner-home__content p {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .banner-home .btn-contato-banner span {
+    font-size: 15px;
+    height: 32px;
+  }
+
+  .banner-home .busca-hexagono {
+    max-width: 100%;
+  }
+}
+
+/*ANIMACAO*/
+
+.banner-home .swiper-slide .banner-home__content h2,
+.banner-home .swiper-slide .banner-home__content p,
+.banner-home .swiper-slide .btn-contato-banner {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.banner-home .swiper-slide-active .banner-home__content h2 {
+  animation: banner-entrada 0.7s ease-out 0.15s both;
+}
+
+.banner-home .swiper-slide-active .banner-home__content p {
+  animation: banner-entrada 0.7s ease-out 0.35s both;
+}
+
+.banner-home .swiper-slide-active .btn-contato-banner {
+  animation: banner-entrada 0.7s ease-out 0.55s both;
+}
+
+@keyframes banner-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner-home .swiper-slide .banner-home__content h2,
+  .banner-home .swiper-slide .banner-home__content p,
+  .banner-home .swiper-slide .btn-contato-banner {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }

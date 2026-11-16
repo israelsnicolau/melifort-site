@@ -1,4 +1,6 @@
+import { useEffect, useRef, useState } from "react";
 import "./Avaliacoes.css";
+import ImagemOtimizada from "./ImagemOtimizada.jsx";
 
 const avaliacoes = [
   {
@@ -25,10 +27,42 @@ const avaliacoes = [
 ];
 
 function Avaliacoes() {
-  console.log(avaliacoes);
+  const secaoRef = useRef(null);
+  const [visivel, setVisivel] = useState(false);
+
+  useEffect(() => {
+    const secao = secaoRef.current;
+
+    if (!secao) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setVisivel(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entrada]) => {
+        if (entrada.isIntersecting) {
+          setVisivel(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -30px 0px",
+      },
+    );
+
+    observer.observe(secao);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="avaliacoes">
+    <section
+      ref={secaoRef}
+      className={`avaliacoes ${visivel ? "avaliacoes-visivel" : ""}`}
+    >
       <div className="avaliacoes-container">
         <h2>O que nossos clientes dizem</h2>
         <p>Conheça a experiência de nossos clientes.</p>
@@ -36,8 +70,11 @@ function Avaliacoes() {
         <div className="avaliacoes-grid">
           {avaliacoes.map((avaliacao) => (
             <article className="avaliacao-card" key={avaliacao.nome}>
-              <div className="avaliacao-estrelas">
-                {"★".repeat(avaliacao.estrelas)}
+              <div
+                className="avaliacao-estrelas"
+                aria-label={`${avaliacao.estrelas} de 5 estrelas`}
+              >
+                <span aria-hidden="true">{"★".repeat(avaliacao.estrelas)}</span>
               </div>
 
               <p className="avaliacao-texto">“{avaliacao.texto}”</p>
@@ -46,7 +83,7 @@ function Avaliacoes() {
                 <div className="avaliacao-foto">
                   <div className="avaliacao-foto-interna">
                     {avaliacao.foto ? (
-                      <img
+                      <ImagemOtimizada
                         src={`${import.meta.env.BASE_URL}avaliacoes/${avaliacao.foto}`}
                         alt={`Foto de ${avaliacao.nome}`}
                       />
@@ -59,6 +96,7 @@ function Avaliacoes() {
                     )}
                   </div>
                 </div>
+
                 <div className="avaliacao-dados">
                   <h3>{avaliacao.nome}</h3>
                   <span>Cliente Melifort</span>

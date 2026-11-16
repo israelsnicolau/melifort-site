@@ -11,7 +11,7 @@ DESTAQUES
 .destaques-container {
   display: flex;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   gap: 40px;
 }
@@ -134,4 +134,119 @@ CARD PRODUTOS DESTAQUE
 
 .btn-destaques:hover {
   background-color: #174c75;
+}
+
+/*RESPONSIVIDADE*/
+
+@media (max-width: 768px) {
+  .destaques-container {
+    flex-direction: column; /*UM ABAIXO DO OUTRO*/
+    text-align: center;
+  }
+  .destaques-container h2 {
+    font-size: 24px;
+  }
+
+  .destaques-produtos {
+    width: 100%;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .produto-card {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .destaques .produto-card {
+    height: auto;
+    min-height: 0;
+  }
+
+  .destaques .produto-card h3 {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/*ANIMACAO*/
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .destaques.destaques-visivel .destaques-texto,
+  .destaques.destaques-visivel .produto-card {
+    animation: destaques-entrada 0.75s ease-out both;
+  }
+
+  .destaques.destaques-visivel .produto-card:nth-child(1) {
+    animation-delay: 0.15s;
+  }
+
+  .destaques.destaques-visivel .produto-card:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .destaques.destaques-visivel .produto-card:nth-child(3) {
+    animation-delay: 0.45s;
+  }
+}
+
+@keyframes destaques-entrada {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destaques .destaques-texto,
+  .destaques .produto-card {
+    animation: none;
+    opacity: 1;
+    translate: none;
+  }
+}
+
+  .destaques.destaques-visivel .destaques-texto,
+  .destaques.destaques-visivel .produto-card {
+    animation: destaques-entrada 0.75s ease-out both;
+  }
+
+  .destaques.destaques-visivel .produto-card:nth-child(1) {
+    animation-delay: 0.15s;
+  }
+
+  .destaques.destaques-visivel .produto-card:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .destaques.destaques-visivel .produto-card:nth-child(3) {
+    animation-delay: 0.45s;
+  }
+}
+
+@keyframes destaques-entrada {
+  from {
+    opacity: 0;
+    translate: 0 24px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .destaques .destaques-texto,
+  .destaques .produto-card {
+    opacity: 1;
+    translate: none;
+    animation: none;
+  }
 }

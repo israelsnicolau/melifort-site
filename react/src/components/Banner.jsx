@@ -19,13 +19,16 @@ function Banner() {
         loop={true}
         effect="fade"
         fadeEffect={{ crossFade: true }}
-        speed={1400}
+        speed={600}
       >
         <SwiperSlide>
           <img
-            src={`${import.meta.env.BASE_URL}carroussel/policarbonato.jpg`}
+            src={`${import.meta.env.BASE_URL}carroussel-webp/policarbonato.webp`}
             alt="Policarbonato Melifort"
             className="banner-imagem"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="container-escrita">
             <div className="banner-home__wrapper">
@@ -48,9 +51,12 @@ function Banner() {
 
         <SwiperSlide>
           <img
-            src={`${import.meta.env.BASE_URL}carroussel/bobina_pvc.jpg`}
+            src={`${import.meta.env.BASE_URL}carroussel-webp/bobina_pvc.webp`}
             alt="Bobina de PVC Melifort"
             className="banner-imagem"
+            loading="eager"
+            fetchPriority="low"
+            decoding="async"
           />
           <div className="container-escrita">
             <div className="banner-home__wrapper">
@@ -73,9 +79,11 @@ function Banner() {
 
         <SwiperSlide>
           <img
-            src={`${import.meta.env.BASE_URL}carroussel/acrilico.jpg`}
+            src={`${import.meta.env.BASE_URL}carroussel-webp/acrilico.webp`}
             alt="Acrílico Melifort"
             className="banner-imagem"
+            loading="lazy"
+            decoding="async"
           />
           <div className="container-escrita">
             <div className="banner-home__wrapper">

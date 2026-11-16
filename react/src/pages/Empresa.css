@@ -1,0 +1,332 @@
+.empresa-banner {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+  overflow: hidden;
+  background-color: #f58220;
+  padding: 70px 0;
+}
+
+.empresa-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.empresa-banner .empresa-container {
+  position: relative;
+  z-index: 2;
+}
+
+.empresa-caminho {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 15px;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.empresa-caminho a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.empresa-caminho a:hover {
+  color: #087dbb;
+  text-decoration: underline;
+}
+
+.empresa-caminho a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.empresa-caminho-separador {
+  opacity: 0.7;
+}
+
+.empresa-banner h1 {
+  color: #ffffff;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 700;
+  margin: 0 0 22px;
+  animation: empresa-entrada-titulo 0.9s ease-out both;
+}
+
+.empresa-detalhe {
+  display: block;
+  width: 92px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff9500 0%, #ffd210 45%, #00a7e5 100%);
+  transform-origin: left center;
+  animation: empresa-entrada-barra 1.1s ease-out 0.45s both;
+}
+
+.empresa-detalhe span {
+  display: none;
+}
+
+.empresa-banner::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -180px;
+  width: 560px;
+  height: 560px;
+  background-image: url("data:image/svg+xml,%3Csvg width='560' height='560' viewBox='0 0 560 560' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M170 50L390 50L500 240L390 430L170 430L60 240L170 50Z' stroke='white' stroke-width='2' opacity='0.45'/%3E%3Cpath d='M235 145L355 145L415 250L355 355L235 355L175 250L235 145Z' stroke='white' stroke-width='1.5' opacity='0.28'/%3E%3Cpath d='M90 350L210 350L270 455L210 560L90 560L30 455L90 350Z' stroke='white' stroke-width='1.5' opacity='0.22'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.empresa-banner-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.empresa-banner-texto {
+  flex: 1;
+  min-width: 0;
+}
+
+.empresa-banner-logo {
+  width: 240px;
+  max-width: 35%;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.empresa-institucional {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: #087dbb;
+  color: #ffffff;
+  padding: 85px 0;
+}
+
+.empresa-institucional .empresa-container {
+  position: relative;
+  z-index: 1;
+}
+
+.empresa-etiqueta {
+  color: #c6eafb;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  margin-bottom: 22px;
+}
+
+.empresa-institucional h2 {
+  color: #ffffff;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.empresa-introducao {
+  max-width: 750px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #ffffff;
+}
+
+.empresa-valores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.empresa-valores span {
+  display: block;
+  color: #c6eafb;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.empresa-valores h3 {
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.empresa-texto-original {
+  max-width: 850px;
+}
+
+.empresa-texto-original p {
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.85;
+  margin: 0 0 22px;
+}
+
+.empresa-texto-original p:last-child {
+  margin-bottom: 0;
+}
+
+.empresa-hexagonos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  margin-top: 45px;
+  margin-bottom: 10px;
+}
+
+.empresa-hexagono {
+  width: 110px;
+  height: 100px;
+  overflow: visible;
+  color: #7fd8ff;
+}
+
+.empresa-hexagono--laranja {
+  color: #f58220;
+}
+
+.empresa-hexagono--amarelo {
+  color: #ffd34d;
+}
+
+.empresa-hexagono-base {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4;
+  opacity: 0.35;
+}
+
+.empresa-hexagono-luz {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 38 302;
+  filter: drop-shadow(0 0 4px currentColor);
+  animation: empresa-circular-luz 3.6s linear infinite;
+}
+
+.empresa-hexagono--laranja .empresa-hexagono-luz {
+  animation-delay: -1.2s;
+}
+
+.empresa-hexagono--amarelo .empresa-hexagono-luz {
+  animation-delay: -2.4s;
+}
+
+/* ANIMACOES */
+
+@keyframes empresa-entrada-titulo {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes empresa-entrada-barra {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes empresa-circular-luz {
+  to {
+    stroke-dashoffset: -340;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .empresa-banner h1,
+  .empresa-detalhe,
+  .empresa-hexagono-luz {
+    animation: none;
+  }
+
+  .empresa-caminho a {
+    transition: none;
+  }
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .empresa-banner {
+    padding: 50px 0;
+  }
+
+  .empresa-banner::after {
+    right: -280px;
+  }
+
+  .empresa-banner-conteudo {
+    gap: 20px;
+  }
+
+  .empresa-banner-logo {
+    width: 130px;
+    max-width: 38%;
+  }
+
+  .empresa-institucional {
+    padding: 55px 0;
+  }
+
+  .empresa-valores {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .empresa-texto-original p {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .empresa-hexagonos {
+    gap: 12px;
+    margin-top: 35px;
+  }
+
+  .empresa-hexagono {
+    width: 85px;
+    height: 77px;
+  }
+}
+
+@media (max-width: 480px) {
+  .empresa-banner-conteudo {
+    align-items: center;
+    gap: 12px;
+  }
+
+  .empresa-banner-logo {
+    width: 100px;
+    max-width: 35%;
+  }
+}

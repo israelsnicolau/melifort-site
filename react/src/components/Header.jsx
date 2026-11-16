@@ -67,8 +67,13 @@ function Header() {
 
       {/*MENU*/}
       <div className="topo-principal">
-        <a href="/">
-          <img src={`${import.meta.env.BASE_URL}/logo.png`} alt="Melifort" />
+        <a href="/" className="logo-header">
+          <img
+            src={`${import.meta.env.BASE_URL}logo.webp`}
+            alt="Melifort"
+            width="150"
+            height="67"
+          />
         </a>
 
         {/*BOTAO DA NAVBAR NO MOBILE*/}
@@ -90,8 +95,8 @@ function Header() {
           <a href="/empresa">Empresa</a>
           <a href="/produtos">Produtos</a>
           <a href="/servicos">Serviços</a>
-          <a href="/cotacao>">Cotação Online</a>
-          <a href="programa-de-fidelidade">Programa de Fidelidade</a>
+          <a href="/cotacao">Cotação Online</a>
+          <a href="/programa-de-fidelidade">Programa de Fidelidade</a>
           <a href="/#segmentos">Segmentos</a>
           <a href="/contato">Contato</a>
         </nav>

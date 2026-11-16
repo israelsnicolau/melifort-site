@@ -1,31 +1,65 @@
+import { useEffect, useRef, useState } from "react";
 import "./Destaques.css";
 
 const produtos = [
   {
     id: 1,
     nome: "Cortina Bobina de PVC Standard",
-    imagem: `${import.meta.env.BASE_URL}produtos/bobina_pvc.png`,
+    imagem: `${import.meta.env.BASE_URL}produtos-webp/bobina_pvc.webp`,
   },
-
   {
     id: 2,
     nome: "Chapa de Policarbonato Alveolar",
-    imagem: `${import.meta.env.BASE_URL}produtos/policarbonato.png`,
+    imagem: `${import.meta.env.BASE_URL}produtos-webp/policarbonato.webp`,
   },
-
   {
     id: 3,
     nome: "Chapa de Acrílico",
-    imagem: `${import.meta.env.BASE_URL}produtos/acrilico.png`,
+    imagem: `${import.meta.env.BASE_URL}produtos-webp/acrilico.webp`,
   },
 ];
 
 function Destaques() {
+  const secaoRef = useRef(null);
+  const [visivel, setVisivel] = useState(false);
+
+  useEffect(() => {
+    const secao = secaoRef.current;
+
+    if (!secao) return;
+
+    if (!("IntersectionObserver" in window)) {
+      setVisivel(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entrada]) => {
+        if (entrada.isIntersecting) {
+          setVisivel(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -30px 0px",
+      },
+    );
+
+    observer.observe(secao);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="destaques">
+    <section
+      ref={secaoRef}
+      className={`destaques ${visivel ? "destaques-visivel" : ""}`}
+    >
       <div className="destaques-container">
         <div className="destaques-texto">
           <h2>DESCUBRA O QUE HÁ DE MELHOR!</h2>
+
           <p>
             Explore o melhor em materiais plásticos para seu negócio ou
             residência com a Melifort!
@@ -47,9 +81,10 @@ function Destaques() {
           {produtos.map((produto) => (
             <div className="produto-card" key={produto.id}>
               <div className="produto-imagem">
-                <img src={produto.imagem} alt={produto.nome} />
+                <img src={produto.imagem} alt={produto.nome} loading="lazy" />
               </div>
-              <h3>{produto.nome}</h3>{" "}
+
+              <h3>{produto.nome}</h3>
             </div>
           ))}
         </div>
