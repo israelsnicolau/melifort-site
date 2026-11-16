@@ -8,21 +8,21 @@ const avaliacoes = [
     texto:
       "Atendimento e produto muito bons. A entrega foi rápida. Preço bem abaixo da minha região. Gostei e recomendo!",
     estrelas: 5,
-    foto: "paulo.png",
+    foto: "paulo.webp",
   },
   {
     nome: "Gislene Alves",
     texto:
       "Atendimento TOP feito por Sr. Rene, atencioso desde a apresentação do produto, dicas de instalação, desconto e ainda nos entregou na minha casa no mesmo dia. Material ótimo. Recomendo.",
     estrelas: 5,
-    foto: "gislene.png",
+    foto: "gislene.webp",
   },
   {
     nome: "Alexandre Vieira",
     texto:
       "Atendimento impecável, rápido e entrega foi realizada muito rapidamente. Grato pelo atendimento.",
     estrelas: 5,
-    foto: "alexandre.png",
+    foto: "alexandre.webp",
   },
 ];
 
@@ -84,7 +84,7 @@ function Avaliacoes() {
                   <div className="avaliacao-foto-interna">
                     {avaliacao.foto ? (
                       <ImagemOtimizada
-                        src={`${import.meta.env.BASE_URL}avaliacoes/${avaliacao.foto}`}
+                        src={`${import.meta.env.BASE_URL}avaliacoes-webp/${avaliacao.foto}`}
                         alt={`Foto de ${avaliacao.nome}`}
                       />
                     ) : (
