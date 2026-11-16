@@ -40,7 +40,7 @@ function Footer() {
         <div className="footer-conteudo">
           <div className="footer-coluna footer-marca">
             <ImagemOtimizada
-              src={`${import.meta.env.BASE_URL}logo_footer.png`}
+              src={`${import.meta.env.BASE_URL}logo_footer.webp`}
               alt="Melifort Plásticos"
               className="footer-logo"
             />
