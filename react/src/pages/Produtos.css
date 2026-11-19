@@ -116,7 +116,7 @@
 /* VITRINE */
 
 .produtos-vitrine {
-  background-color: #ffffff;
+  background-color: whitesmoke;
   padding: 80px 0;
 }
 
@@ -128,9 +128,99 @@
   margin: 0 0 55px;
 }
 
+/* BUSCA E ORDENAÇÃO */
+
+.produtos-filtros {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.produtos-filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.produtos-filtro-grupo label {
+  color: #174c75;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.produtos-filtro-moldura {
+  --cor-borda-filtro: #f58220;
+
+  position: relative;
+  width: 100%;
+  padding: 3px;
+  box-sizing: border-box;
+  background-color: var(--cor-borda-filtro);
+
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+
+  transition: background-color 0.2s ease;
+}
+
+.produtos-filtro-moldura:hover,
+.produtos-filtro-moldura:focus-within {
+  --cor-borda-filtro: #087dbb;
+}
+
+.produtos-filtro-moldura input,
+.produtos-filtro-moldura select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  box-sizing: border-box;
+
+  padding: 10px 24px;
+  border: 0;
+  border-radius: 0;
+
+  background-color: #ffffff;
+  color: #243746;
+
+  font: inherit;
+  font-size: 14px;
+
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+}
+
+.produtos-filtro-moldura input::placeholder {
+  color: #81909d;
+}
+
+.produtos-filtro-moldura input:focus,
+.produtos-filtro-moldura select:focus {
+  outline: none;
+}
+
+.produtos-filtro-moldura:focus-within {
+  filter: drop-shadow(0 0 3px rgba(8, 125, 187, 0.35));
+}
+
+.produtos-filtro-moldura select {
+  cursor: pointer;
+  padding-right: 26px;
+}
+
+.produtos-sem-resultados {
+  text-align: center;
+  padding: 50px 20px;
+  color: #526170;
+  font-size: 16px;
+}
+
+/* GRADE DE PRODUTOS */
+
 .produtos-grade {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 35px;
 }
 
@@ -161,6 +251,7 @@
   background: transparent;
   font: inherit;
   cursor: pointer;
+  perspective: 800px;
 }
 
 .produto-card-botao:focus-visible {
@@ -171,14 +262,43 @@
 
 /* HEXÁGONOS */
 
+.produto-moldura {
+  width: 95%;
+  aspect-ratio: 1.15 / 1;
+  flex-shrink: 0;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background-color: var(--cor-moldura);
+  padding: 6px;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+}
+
+.produto-moldura-interior {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  display: grid;
+  place-items: center;
+}
+
 .produto-hexagono {
   --cor-led: #00a7e5;
   position: relative;
-  width: min(100%, 310px);
+  width: min(100%, 260px); /*TAMANHO MAXIMO COM GRADE DE 4*/
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   display: grid;
   place-items: center;
+  transition:
+    transform 0.4s ease-out,
+    filter 0.4s ease-out;
+}
+
+.produto-card-botao:hover .produto-hexagono {
+  transform: translateZ(60px);
+  filter: drop-shadow(0px 12px 18px rgba(0, 0, 0, 0.3));
 }
 
 .produto-laranja {
@@ -206,6 +326,8 @@
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 
   animation: produto-led 4s linear infinite;
+
+  pointer-events: none;
 }
 
 .produto-hexagono-imagem {
@@ -213,8 +335,8 @@
   width: calc(100% - 10px);
   height: calc(100% - 10px);
   box-sizing: border-box;
-  padding: 30px 25px;
-  background-color: #f1f6f9;
+  padding: 20px 15px;
+  background-color: white;
 
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 
@@ -227,8 +349,8 @@
 }
 
 .produto-hexagono-imagem img {
-  width: 80%;
-  height: 150px;
+  width: 100%;
+  height: 180px;
   min-height: 0;
   flex-shrink: 1;
   object-fit: contain;
@@ -278,31 +400,27 @@
   }
 
   .produtos-grade {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 35px 20px;
+    grid-template-columns: 1fr;
+    gap: 35px;
   }
 
   .produto-hexagono {
-    width: min(100%, 260px);
+    width: min(100%, 300px);
+  }
+
+  /* FILTROS EM TELAS MENORES */
+  .produtos-filtros {
+    grid-template-columns: minmax(0, 1fr) 190px;
+    gap: 14px;
   }
 }
 
 @media (max-width: 480px) {
-  .produtos-banner-conteudo {
-    gap: 12px;
-  }
-
-  .produtos-banner-logo {
-    width: 100px;
-    max-width: 35%;
-  }
-
-  .produtos-grade {
+  /* FILTROS EMPILHADOS NO CELULAR */
+  .produtos-filtros {
     grid-template-columns: 1fr;
-  }
-
-  .produto-hexagono {
-    width: min(100%, 310px);
+    gap: 18px;
+    margin-bottom: 35px;
   }
 }
 
@@ -312,5 +430,9 @@
   .produto-item,
   .produto-hexagono::before {
     animation: none;
+  }
+
+  .produtos-filtro-moldura {
+    transition: none;
   }
 }

@@ -103,50 +103,56 @@ function ModalProduto({ produto, aoFechar }) {
             <div className="produto-modal-campos">
               <label>
                 Tamanho
-                <select
-                  value={tamanho}
-                  onChange={(evento) => {
-                    setTamanho(evento.target.value);
-                    setMensagem("");
-                  }}
-                >
-                  {produto.tamanhos.map((opcao) => (
-                    <option key={opcao} value={opcao}>
-                      {opcao}
-                    </option>
-                  ))}
-                </select>
+                <div className="produto-modal-moldura-campo">
+                  <select
+                    value={tamanho}
+                    onChange={(evento) => {
+                      setTamanho(evento.target.value);
+                      setMensagem("");
+                    }}
+                  >
+                    {produto.tamanhos.map((opcao) => (
+                      <option key={opcao} value={opcao}>
+                        {opcao}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </label>
 
               <label>
                 Cor
-                <select
-                  value={cor}
-                  onChange={(evento) => {
-                    setCor(evento.target.value);
-                    setMensagem("");
-                  }}
-                >
-                  {produto.cores.map((opcao) => (
-                    <option key={opcao} value={opcao}>
-                      {opcao}
-                    </option>
-                  ))}
-                </select>
+                <div className="produto-modal-moldura-campo">
+                  <select
+                    value={cor}
+                    onChange={(evento) => {
+                      setCor(evento.target.value);
+                      setMensagem("");
+                    }}
+                  >
+                    {produto.cores.map((opcao) => (
+                      <option key={opcao} value={opcao}>
+                        {opcao}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </label>
 
               <label>
                 Quantidade
-                <input
-                  type="number"
-                  min="1"
-                  step="1"
-                  value={quantidade}
-                  onChange={(evento) => {
-                    setQuantidade(evento.target.value);
-                    setMensagem("");
-                  }}
-                />
+                <div className="produto-modal-moldura-campo">
+                  <input
+                    type="number"
+                    min="1"
+                    step="1"
+                    value={quantidade}
+                    onChange={(evento) => {
+                      setQuantidade(evento.target.value);
+                      setMensagem("");
+                    }}
+                  />
+                </div>
               </label>
             </div>
 
