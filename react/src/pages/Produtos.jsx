@@ -212,9 +212,9 @@ function Produtos() {
                             />
                           </div>
                         </div>
+                        <h3>{produto.nome}</h3>
                       </div>
                     </div>
-                    <h3>{produto.nome}</h3>
                   </button>
                 </article>
               ))}

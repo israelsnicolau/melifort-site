@@ -1,0 +1,154 @@
+.carrinho-flutuante {
+  position: fixed;
+  right: 24px;
+  bottom: 105px;
+  z-index: 10001;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 76px;
+  height: 70px;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  animation: carrinho-entrada 0.5s ease-out both;
+  transition: transform 0.3s ease;
+}
+
+.carrinho-hexagono {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 72px;
+  height: 62px;
+
+  background: #f58220;
+
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.carrinho-hexagono::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+
+  background: #f58220;
+  transition: background 0.3s ease;
+
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.carrinho-flutuante:hover .carrinho-hexagono::before {
+  background: #087dbb;
+}
+
+.carrinho-icone {
+  position: relative;
+  z-index: 1;
+
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.carrinho-contador {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 24px;
+  height: 24px;
+  padding: 0 5px;
+  box-sizing: border-box;
+
+  border-radius: 50%;
+  background: #f58220;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.carrinho-flutuante:hover {
+  transform: translateY(-5px) scale(1.07);
+}
+
+.carrinho-flutuante:focus-visible {
+  outline: 3px solid #087dbb;
+  outline-offset: 5px;
+}
+
+@keyframes carrinho-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .carrinho-flutuante {
+    right: 14px;
+    bottom: 90px;
+    width: 66px;
+    height: 60px;
+  }
+
+  .carrinho-hexagono {
+    width: 62px;
+    height: 54px;
+  }
+
+  .carrinho-icone {
+    font-size: 27px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrinho-flutuante {
+    animation: none;
+    transition: none;
+  }
+
+  .carrinho-flutuante:hover {
+    transform: none;
+  }
+}
+
+/*ANIMACAO CARRINHO*/
+
+@keyframes carrinho-pulsar {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.16);
+  }
+}
+
+.carrinho-flutuante.carrinho-pulso {
+  animation: carrinho-pulsar 0.4s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carrinho-flutuante.carrinho-pulso {
+    animation: none;
+  }
+}

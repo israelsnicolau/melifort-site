@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from "react";
+import { useCarrinho } from "../context/CarrinhoContext.jsx";
 import "./ModalProduto.css";
 
 function ModalProduto({ produto, aoFechar }) {
+  const { adicionarItem } = useCarrinho();
+
   const [tamanho, setTamanho] = useState(produto.tamanhos[0] ?? "");
   const [cor, setCor] = useState(produto.cores[0] ?? "");
   const [quantidade, setQuantidade] = useState(1);
@@ -9,6 +12,7 @@ function ModalProduto({ produto, aoFechar }) {
 
   const modalRef = useRef(null);
   const fecharRef = useRef(null);
+  const botaoCotacaoRef = useRef(null);
 
   useEffect(() => {
     const elementoAnterior = document.activeElement;
@@ -53,9 +57,105 @@ function ModalProduto({ produto, aoFechar }) {
   }, [aoFechar]);
 
   function adicionarCotacao() {
-    setMensagem(
-      "Produto selecionado! A integração com o carrinho de cotação será realizada futuramente.",
-    );
+    const origem = botaoCotacaoRef.current;
+    const posicaoOrigem = origem?.getBoundingClientRect();
+
+    const adicionado = adicionarItem(produto, tamanho, cor, quantidade);
+
+    if (!adicionado) {
+      setMensagem("Informe uma quantidade válida.");
+      return;
+    }
+
+    setMensagem("Produto adicionado à cotação!");
+
+    if (
+      !posicaoOrigem ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const inicioX = posicaoOrigem.left + posicaoOrigem.width / 2;
+
+    const inicioY = posicaoOrigem.top + posicaoOrigem.height / 2;
+
+    const numero = document.createElement("span");
+
+    numero.className = "quantidade-voando";
+    numero.textContent = `+${Number(quantidade)}`;
+
+    numero.style.left = `${inicioX}px`;
+    numero.style.top = `${inicioY}px`;
+
+    document.body.appendChild(numero);
+
+    // Aguarda o React atualizar e exibir o carrinho.
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const carrinho = document.querySelector(".carrinho-flutuante");
+
+        if (!carrinho) {
+          numero.remove();
+          return;
+        }
+
+        const destino = carrinho.getBoundingClientRect();
+
+        const finalX = destino.left + destino.width / 2;
+        const finalY = destino.top + destino.height / 2;
+
+        const distanciaX = finalX - inicioX;
+        const distanciaY = finalY - inicioY;
+
+        const animacao = numero.animate(
+          [
+            {
+              transform: "translate(-50%, -50%) scale(1)",
+              opacity: 1,
+              offset: 0,
+            },
+            {
+              transform: `translate(
+                calc(-50% + ${distanciaX * 0.45}px),
+                calc(-50% + ${distanciaY * 0.15 - 80}px)
+              ) scale(1.15)`,
+              opacity: 1,
+              offset: 0.45,
+            },
+            {
+              transform: `translate(
+                calc(-50% + ${distanciaX}px),
+                calc(-50% + ${distanciaY}px)
+              ) scale(0.4)`,
+              opacity: 0,
+              offset: 1,
+            },
+          ],
+          {
+            duration: 850,
+            easing: "ease-in-out",
+            fill: "forwards",
+          },
+        );
+
+        animacao.finished
+          .then(() => {
+            numero.remove();
+
+            if (!carrinho.isConnected) return;
+
+            carrinho.classList.remove("carrinho-pulso");
+
+            void carrinho.offsetWidth;
+
+            carrinho.classList.add("carrinho-pulso");
+          })
+          .catch(() => {
+            numero.remove();
+          });
+      });
+    });
   }
 
   return (
@@ -157,6 +257,7 @@ function ModalProduto({ produto, aoFechar }) {
             </div>
 
             <button
+              ref={botaoCotacaoRef}
               type="button"
               className="produto-modal-cotacao"
               onClick={adicionarCotacao}
