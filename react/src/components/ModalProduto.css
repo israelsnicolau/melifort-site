@@ -66,24 +66,35 @@
 .produto-modal-fechar {
   position: absolute;
   top: 14px;
-  right: 18px;
-  z-index: 2;
+  right: 14px;
+  z-index: 10;
 
-  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
   height: 40px;
-  border: 0;
-  border-radius: 50%;
 
-  background: #f1f4f6;
-  color: #174c75;
-  font-size: 30px;
+  border: none;
+  padding: 0;
+
+  background: #f58220;
+  color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 500;
   line-height: 1;
+
   cursor: pointer;
+
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+  transition: background 0.3s ease;
 }
 
 .produto-modal-fechar:hover {
-  background: #f58220;
-  color: #ffffff;
+  background: #087dbb;
 }
 
 /* CONTEÚDO */

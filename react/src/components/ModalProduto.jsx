@@ -90,7 +90,6 @@ function ModalProduto({ produto, aoFechar }) {
 
     document.body.appendChild(numero);
 
-    // Aguarda o React atualizar e exibir o carrinho.
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         const carrinho = document.querySelector(".carrinho-flutuante");
