@@ -47,13 +47,46 @@ export function CarrinhoProvider({ children }) {
     return true;
   }
 
+  function alterarQuantidade(id, tamanho, cor, quantidade) {
+    const novaQuantidade = Number(quantidade);
+
+    if (!Number.isInteger(novaQuantidade) || novaQuantidade < 1) {
+      return;
+    }
+
+    setItens((itensAtuais) =>
+      itensAtuais.map((item) =>
+        item.id === id && item.tamanho === tamanho && item.cor === cor
+          ? { ...item, quantidade: novaQuantidade }
+          : item,
+      ),
+    );
+  }
+
+  function removerItem(id, tamanho, cor) {
+    setItens((itensAtuais) =>
+      itensAtuais.filter(
+        (item) =>
+          !(item.id === id && item.tamanho === tamanho && item.cor === cor),
+      ),
+    );
+  }
+
   const quantidadeTotal = itens.reduce(
     (total, item) => total + item.quantidade,
     0,
   );
 
   return (
-    <CarrinhoContext.Provider value={{ itens, adicionarItem, quantidadeTotal }}>
+    <CarrinhoContext.Provider
+      value={{
+        itens,
+        adicionarItem,
+        alterarQuantidade,
+        removerItem,
+        quantidadeTotal,
+      }}
+    >
       {children}
     </CarrinhoContext.Provider>
   );

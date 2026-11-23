@@ -1,17 +1,19 @@
 import { FaShoppingCart } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
 import { useCarrinho } from "../context/CarrinhoContext.jsx";
 import "./CarrinhoFlutuante.css";
 
 function CarrinhoFlutuante() {
+  const location = useLocation();
   const { quantidadeTotal } = useCarrinho();
 
-  if (quantidadeTotal === 0) {
+  if (quantidadeTotal === 0 || location.pathname === "/cotacao") {
     return null;
   }
 
   return (
-    <button
-      type="button"
+    <Link
+      to="/cotacao"
       className="carrinho-flutuante"
       aria-label={`Minha cotação: ${quantidadeTotal} unidades`}
       title="Minha cotação"
@@ -21,7 +23,7 @@ function CarrinhoFlutuante() {
       </span>
 
       <span className="carrinho-contador">{quantidadeTotal}</span>
-    </button>
+    </Link>
   );
 }
 

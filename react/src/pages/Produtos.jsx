@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ModalProduto from "../components/ModalProduto.jsx";
 import "./Produtos.css";
 
-const produtosModelo = [
+export const produtosModelo = [
   {
     id: 1,
     nome: "Policarbonato",
@@ -96,8 +95,6 @@ const produtosModelo = [
 ];
 
 function Produtos() {
-  const [produtoSelecionado, setProdutoSelecionado] = useState(null);
-
   // BUSCA E ORDENAÇÃO
   const [busca, setBusca] = useState("");
   const [ordenacao, setOrdenacao] = useState("az");
@@ -116,10 +113,6 @@ function Produtos() {
 
       return ordenacao === "az" ? comparacao : -comparacao;
     });
-
-  function fecharModal() {
-    setProdutoSelecionado(null);
-  }
 
   return (
     <main className="pagina-produtos">
@@ -193,10 +186,9 @@ function Produtos() {
                   key={produto.id}
                   style={{ "--produto-indice": indice }}
                 >
-                  <button
-                    type="button"
+                  <Link
+                    to={`/produtos/${produto.id}`}
                     className="produto-card-botao"
-                    onClick={() => setProdutoSelecionado(produto)}
                     aria-label={`Ver detalhes de ${produto.nome}`}
                   >
                     <div
@@ -207,15 +199,16 @@ function Produtos() {
                         <div className="produto-moldura">
                           <div className="produto-moldura-interior">
                             <img
-                              src={`${import.meta.env.BASE_URL}${produto.imagem}`}
+                              src={`${import.meta.env.BASE_URL}${produto.imagem.replace(/^\/+/, "")}`}
                               alt=""
                             />
                           </div>
                         </div>
+
                         <h3>{produto.nome}</h3>
                       </div>
                     </div>
-                  </button>
+                  </Link>
                 </article>
               ))}
             </div>
@@ -226,14 +219,6 @@ function Produtos() {
           )}
         </div>
       </section>
-
-      {produtoSelecionado && (
-        <ModalProduto
-          key={produtoSelecionado.id}
-          produto={produtoSelecionado}
-          aoFechar={fecharModal}
-        />
-      )}
     </main>
   );
 }

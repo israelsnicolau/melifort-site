@@ -2,30 +2,34 @@ import "./App.css";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { CarrinhoProvider } from "./context/CarrinhoContext.jsx";
 
-import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
-import WhatsappFlutuante from "./components/WhatsappFlutuante.jsx";
-import CarrinhoFlutuante from "./components/CarrinhoFlutuante.jsx";
-import Produtos from "./pages/Produtos.jsx";
-
+import LayoutPublico from "./components/LayoutPublico.jsx";
 import Home from "./pages/Home.jsx";
 import Empresa from "./pages/Empresa.jsx";
+import Produtos from "./pages/Produtos.jsx";
+import PaginaProdutos from "./pages/PaginaProdutos.jsx";
+import Carrinho from "./pages/Carrinho.jsx";
+
+import AdminLayout, { ROTA_GESTAO } from "./admin/components/AdminLayout.jsx";
+
+import Dashboard from "./admin/pages/Dashboard.jsx";
 
 function App() {
   return (
     <CarrinhoProvider>
       <HashRouter>
-        <Header />
-
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/empresa" element={<Empresa />} />
-          <Route path="/produtos" element={<Produtos />} />
-        </Routes>
+          <Route element={<LayoutPublico />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/empresa" element={<Empresa />} />
+            <Route path="/produtos" element={<Produtos />} />
+            <Route path="/produtos/:id" element={<PaginaProdutos />} />
+            <Route path="/cotacao" element={<Carrinho />} />
+          </Route>
 
-        <Footer />
-        <WhatsappFlutuante />
-        <CarrinhoFlutuante />
+          <Route path={ROTA_GESTAO} element={<AdminLayout />}>
+            <Route index element={<Dashboard />} />
+          </Route>
+        </Routes>
       </HashRouter>
     </CarrinhoProvider>
   );
