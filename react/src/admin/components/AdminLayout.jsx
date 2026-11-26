@@ -7,6 +7,7 @@ import {
   BarChart3,
   Settings,
   ExternalLink,
+  UserRound,
 } from "lucide-react";
 
 import "./AdminLayout.css";
@@ -14,36 +15,12 @@ import "./AdminLayout.css";
 export const ROTA_GESTAO = "/x7Kp92mQ4vR8";
 
 const menu = [
-  {
-    nome: "Dashboard",
-    caminho: "",
-    icone: LayoutDashboard,
-  },
-  {
-    nome: "Produtos",
-    caminho: "produtos",
-    icone: Package,
-  },
-  {
-    nome: "Destaques",
-    caminho: "destaques",
-    icone: Star,
-  },
-  {
-    nome: "Cotações",
-    caminho: "cotacoes",
-    icone: ClipboardList,
-  },
-  {
-    nome: "Relatórios",
-    caminho: "relatorios",
-    icone: BarChart3,
-  },
-  {
-    nome: "Configurações",
-    caminho: "configuracoes",
-    icone: Settings,
-  },
+  { nome: "Dashboard", caminho: "", icone: LayoutDashboard },
+  { nome: "Produtos", caminho: "produtos", icone: Package },
+  { nome: "Destaques", caminho: "destaques", icone: Star },
+  { nome: "Cotações", caminho: "cotacoes", icone: ClipboardList },
+  { nome: "Relatórios", caminho: "relatorios", icone: BarChart3 },
+  { nome: "Configurações", caminho: "configuracoes", icone: Settings },
 ];
 
 function AdminLayout() {
@@ -51,19 +28,14 @@ function AdminLayout() {
     <div className="admin-layout">
       <aside className="admin-sidebar">
         <div className="admin-marca">
-          <div className="admin-marca-hex">
-            <span>M</span>
-          </div>
-
-          <div className="admin-marca-textos">
-            <strong>MELIFORT</strong>
-            <small>PAINEL DE GESTÃO</small>
-          </div>
+          <img
+            src={`${import.meta.env.BASE_URL}logo.webp`}
+            alt="Melifort"
+            className="admin-logo"
+          />
         </div>
 
         <nav className="admin-menu" aria-label="Menu administrativo">
-          <span className="admin-menu-titulo">GERENCIAMENTO</span>
-
           {menu.map((item) => {
             const Icone = item.icone;
 
@@ -92,20 +64,22 @@ function AdminLayout() {
 
         <div className="admin-sidebar-rodape">
           <NavLink to="/" className="admin-voltar-site">
-            <ExternalLink size={17} />
+            <ExternalLink size={16} />
             <span>Visualizar site</span>
           </NavLink>
 
-          <small>Melifort Admin v1.0</small>
+          <small>Melifort © {new Date().getFullYear()}</small>
         </div>
       </aside>
 
       <div className="admin-conteudo">
         <header className="admin-topbar">
-          <span>Painel de gestão</span>
+          <span>Gestão do site</span>
 
           <div className="admin-usuario">
-            <span className="admin-usuario-hex">A</span>
+            <span className="admin-usuario-hex">
+              <UserRound size={17} />
+            </span>
 
             <span>Administrador</span>
           </div>

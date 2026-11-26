@@ -5,7 +5,11 @@ import {
   MousePointerClick,
   Package,
   Star,
-  ArrowUpRight,
+  Download,
+  TrendingUp,
+  Monitor,
+  Globe,
+  Clock,
 } from "lucide-react";
 
 import "./Dashboard.css";
@@ -13,71 +17,71 @@ import "./Dashboard.css";
 const indicadores = [
   {
     titulo: "Visitantes",
-    valor: "12.485",
-    variacao: "+12,5%",
     icone: Users,
     cor: "azul",
   },
   {
     titulo: "Visualizações",
-    valor: "38.920",
-    variacao: "+8,2%",
     icone: Eye,
     cor: "laranja",
   },
   {
     titulo: "Cotações recebidas",
-    valor: "186",
-    variacao: "+15,3%",
     icone: FileText,
     cor: "azul",
   },
   {
     titulo: "Cliques no WhatsApp",
-    valor: "342",
-    variacao: "+6,4%",
     icone: MousePointerClick,
+    cor: "laranja",
+  },
+  {
+    titulo: "Downloads do catálogo",
+    icone: Download,
+    cor: "azul",
+  },
+  {
+    titulo: "Taxa de conversão",
+    icone: TrendingUp,
     cor: "laranja",
   },
 ];
 
-const visitas = [
-  { dia: "Seg", altura: 42 },
-  { dia: "Ter", altura: 60 },
-  { dia: "Qua", altura: 49 },
-  { dia: "Qui", altura: 78 },
-  { dia: "Sex", altura: 65 },
-  { dia: "Sáb", altura: 52 },
-  { dia: "Dom", altura: 87 },
-];
-
-const produtos = [
+const resumo = [
   {
-    nome: "Policarbonato",
-    acessos: 780,
-    percentual: 100,
+    titulo: "Produtos cadastrados",
+    icone: Package,
+    cor: "azul",
   },
   {
-    nome: "Bobina de PVC",
-    acessos: 540,
-    percentual: 69,
+    titulo: "Produtos em destaque",
+    icone: Star,
+    cor: "laranja",
   },
   {
-    nome: "Chapa de Acrílico",
-    acessos: 320,
-    percentual: 41,
+    titulo: "Cotações pendentes",
+    icone: Clock,
+    cor: "azul",
   },
 ];
 
-function HexagonoLed({ icone: Icone, valor, cor }) {
+function HexagonoLed({ icone: Icone, cor, valor }) {
   return (
     <div className={`dashboard-hexagono ${cor}`}>
       <div className="dashboard-hexagono-borda" />
 
       <div className="dashboard-hexagono-interior">
-        <Icone size={23} strokeWidth={1.5} />
-        <strong>{valor}</strong>
+        <Icone size={21} strokeWidth={1.6} />
+        <strong>{valor ?? "—"}</strong>
       </div>
+    </div>
+  );
+}
+
+function EstadoVazio({ texto = "Sem dados disponíveis" }) {
+  return (
+    <div className="dashboard-estado-vazio">
+      <span>{texto}</span>
     </div>
   );
 }
@@ -86,44 +90,24 @@ function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard-cabecalho">
-        <div>
-          <span className="dashboard-sobretitulo">VISÃO GERAL</span>
-
-          <h1>Dashboard</h1>
-
-          <p>Acompanhe os indicadores e atividades do site.</p>
-        </div>
+        <h1>Dashboard</h1>
 
         <select
           className="dashboard-periodo"
           defaultValue="30"
-          disabled
           aria-label="Período dos indicadores"
+          disabled
         >
           <option value="30">Últimos 30 dias</option>
         </select>
       </div>
 
-      <div className="dashboard-aviso">
-        Visualização demonstrativa. Os dados reais serão conectados ao banco de
-        dados e ao Google Analytics.
-      </div>
-
       <div className="dashboard-indicadores">
         {indicadores.map((item) => (
           <article className="dashboard-indicador" key={item.titulo}>
-            <HexagonoLed icone={item.icone} valor={item.valor} cor={item.cor} />
+            <HexagonoLed icone={item.icone} cor={item.cor} valor={null} />
 
-            <div className="dashboard-indicador-infos">
-              <h2>{item.titulo}</h2>
-
-              <div className="dashboard-variacao">
-                <ArrowUpRight size={15} />
-                <span>{item.variacao}</span>
-              </div>
-
-              <small>vs. período anterior</small>
-            </div>
+            <h2>{item.titulo}</h2>
           </article>
         ))}
       </div>
@@ -131,79 +115,87 @@ function Dashboard() {
       <div className="dashboard-grid">
         <section className="dashboard-painel">
           <div className="dashboard-painel-cabecalho">
-            <h2>Visitas ao site</h2>
-
-            <p>Evolução dos acessos nos últimos 7 dias</p>
+            <h2>Tráfego do site</h2>
+            <span>Visitantes e visualizações</span>
           </div>
 
-          <div className="dashboard-grafico">
-            {visitas.map((item) => (
-              <div className="dashboard-barra-coluna" key={item.dia}>
-                <div className="dashboard-barra-fundo">
-                  <div
-                    className="dashboard-barra"
-                    style={{
-                      "--altura": `${item.altura}%`,
-                    }}
-                  />
-                </div>
+          <div className="dashboard-grafico-vazio">
+            <div className="dashboard-grafico-linhas">
+              {Array.from({ length: 5 }, (_, index) => (
+                <div key={index} />
+              ))}
+            </div>
 
-                <span>{item.dia}</span>
-              </div>
-            ))}
+            <EstadoVazio />
           </div>
         </section>
 
         <section className="dashboard-painel">
           <div className="dashboard-painel-cabecalho">
             <h2>Produtos mais acessados</h2>
-
-            <p>Interesse dos visitantes por produto</p>
           </div>
 
-          <div className="dashboard-produtos">
-            {produtos.map((produto) => (
-              <div className="dashboard-produto" key={produto.nome}>
-                <div className="dashboard-produto-info">
-                  <span>{produto.nome}</span>
+          <div className="dashboard-tabela">
+            <div className="dashboard-tabela-topo">
+              <span>Produto</span>
+              <span>Acessos</span>
+            </div>
 
-                  <strong>{produto.acessos}</strong>
-                </div>
-
-                <div className="dashboard-produto-trilha">
-                  <div
-                    className="dashboard-produto-progresso"
-                    style={{
-                      "--largura": `${produto.percentual}%`,
-                    }}
-                  />
-                </div>
-              </div>
-            ))}
+            <EstadoVazio />
           </div>
         </section>
       </div>
 
       <div className="dashboard-resumo">
-        <div className="dashboard-resumo-item">
-          <div className="dashboard-resumo-hex azul">
-            <Package size={21} />
+        {resumo.map((item) => {
+          const Icone = item.icone;
+
+          return (
+            <article className="dashboard-resumo-item" key={item.titulo}>
+              <div className={`dashboard-resumo-hex ${item.cor}`}>
+                <Icone size={20} strokeWidth={1.7} />
+              </div>
+
+              <span>{item.titulo}</span>
+              <strong>—</strong>
+            </article>
+          );
+        })}
+      </div>
+
+      <div className="dashboard-grid-secundario">
+        <section className="dashboard-painel">
+          <div className="dashboard-painel-cabecalho">
+            <h2>
+              <Globe size={16} />
+              Origem dos acessos
+            </h2>
           </div>
 
-          <span>Produtos cadastrados</span>
+          <EstadoVazio />
+        </section>
 
-          <strong>5</strong>
-        </div>
-
-        <div className="dashboard-resumo-item">
-          <div className="dashboard-resumo-hex laranja">
-            <Star size={21} />
+        <section className="dashboard-painel">
+          <div className="dashboard-painel-cabecalho">
+            <h2>
+              <Monitor size={16} />
+              Dispositivos
+            </h2>
           </div>
 
-          <span>Produtos em destaque</span>
+          <EstadoVazio />
+        </section>
 
-          <strong>3</strong>
-        </div>
+        <section className="dashboard-painel">
+          <div className="dashboard-painel-cabecalho">
+            <h2>
+              <FileText size={16} />
+              Últimas cotações
+            </h2>
+          </div>
+
+          <EstadoVazio />
+        </section>
       </div>
     </div>
   );

@@ -11,19 +11,23 @@
     <link
       rel="preload"
       as="image"
-      href="/melifort-site/carroussel-webp/policarbonato.webp"
+      href="%BASE_URL%carroussel-webp/policarbonato.webp"
       fetchpriority="high"
     />
 
     <!--PERMITE CARACTERES ESPECIAIS E ACENTUAÇÃO-->
     <meta charset="UTF-8" />
+
     <!--ICONE DA BARRA DO NAVEGADOR-->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <!--DEIXA O SITE RESPONSIVO-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!--TITULO DA PAGINA-->
     <title>Melifort | Soluções Industriais</title>
   </head>
+
   <!--BUSCA OS ELEMENTOS NO APP.JSX ONDE FICA O CÓDIGO-->
   <body>
     <div id="root"></div>
@@ -33,26 +37,52 @@
 
     <!-- Leadster - Melifort -->
     <script>
-      (function (a, b, c, d) {
-        try {
-          var e = b.head || b.getElementsByTagName("head")[0];
-          var f = b.createElement("script");
+      (function () {
+        const rotaGestao = "/x7Kp92mQ4vR8";
 
-          f.setAttribute("src", c);
-          f.setAttribute("charset", "UTF-8");
-          f.defer = true;
+        // VERIFICA SE ESTÁ NO PAINEL ADMINISTRATIVO
+        function estaNaGestao() {
+          const rota = window.location.hash
+            .slice(1)
+            .split("?")[0]
+            .toLowerCase();
 
-          a.neuroleadId = d;
-          e.appendChild(f);
-        } catch (g) {
-          console.error("Erro ao carregar Leadster:", g);
+          const gestao = rotaGestao.toLowerCase();
+
+          return rota === gestao || rota.startsWith(gestao + "/");
         }
-      })(
-        window,
-        document,
-        "https://cdn.leadster.com.br/neurolead/neurolead.min.js",
-        "FcSaqLCDyPwqTYW6LY8LlDwQn",
-      );
+
+        const iniciouNaGestao = estaNaGestao();
+
+        // RECARREGA AO ALTERNAR ENTRE O SITE E O PAINEL
+        window.addEventListener("hashchange", function () {
+          if (estaNaGestao() !== iniciouNaGestao) {
+            window.location.reload();
+          }
+        });
+
+        // IMPEDE O CARREGAMENTO DO LEADSTER NO PAINEL
+        if (iniciouNaGestao) {
+          return;
+        }
+
+        // CARREGA O LEADSTER NO SITE PUBLICO
+        try {
+          window.neuroleadId = "FcSaqLCDyPwqTYW6LY8LlDwQn";
+
+          const script = document.createElement("script");
+
+          script.id = "leadster-script";
+          script.src = "https://cdn.leadster.com.br/neurolead/neurolead.min.js";
+
+          script.charset = "UTF-8";
+          script.defer = true;
+
+          document.head.appendChild(script);
+        } catch (erro) {
+          console.error("Erro ao carregar Leadster:", erro);
+        }
+      })();
     </script>
   </body>
 </html>
