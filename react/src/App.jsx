@@ -12,6 +12,7 @@ import Carrinho from "./pages/Carrinho.jsx";
 import AdminLayout, { ROTA_GESTAO } from "./admin/components/AdminLayout.jsx";
 
 import Dashboard from "./admin/pages/Dashboard.jsx";
+import GerenciarProdutos from "./admin/pages/GerenciarPordutos.jsx";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
 
           <Route path={ROTA_GESTAO} element={<AdminLayout />}>
             <Route index element={<Dashboard />} />
+            <Route path="produtos" element={<GerenciarProdutos />}></Route>
           </Route>
         </Routes>
       </HashRouter>
